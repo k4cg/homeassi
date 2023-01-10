@@ -1,5 +1,5 @@
-baseURL = "/"
-title = "Goldydocs"
+baseURL = "https://k4cg.github.io/homeassi"
+title = "K4CG Homeassi Documentation"
 
 # Language settings
 contentDir = "content/en"
