@@ -5986,7 +5986,806 @@ defined by the following table:&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;p>Of course, you can also use these classes to give repository links unique styles
-for your project.&lt;/p></description></item><item><title>Docs: Taxonomy Support</title><link>/docs/adding-content/taxonomy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/adding-content/taxonomy/</guid><description>
+for your project.&lt;/p></description></item><item><title>Docs: Homeassi Documentation</title><link>/docs/homeassi/homeassi-documentation/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>/docs/homeassi/homeassi-documentation/</guid><description>
+&lt;h2 id="grundlegendes">Grundlegendes&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.home-assistant.io/installation/linux">Doku zur Installation&lt;/a> (momentan als VM auf einem der &lt;a href="https://proxmox.intern.k4cg.org:8006/">Proxmox Hosts&lt;/a> installiert)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Web UI unter homeassistant.local:8123 (&lt;strong>TODO&lt;/strong> statisches Lease im &lt;a href="https://k4cg.org/index.php/Host:router.intern.k4cg.org">Router&lt;/a> erstellen))&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Username/Passwort vergeben&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Grundlegene Einstellungen vornehmen&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Integrationen konfigurieren (&lt;em>Einstellungen - Geraete &amp;amp; Dienste - Integrationen&lt;/em>):&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Philips Hue&lt;/strong>: mit Knopfdruck an de Hue Bridge verbinden&lt;/li>
+&lt;li>&lt;strong>OctoPi&lt;/strong>: nach Start der Einrichtung im Homeassistant an der &lt;a href="https://octopi.intern.k4cg.org/">OctoPi Web UI&lt;/a> anmelden und Anfrage bestaetigen&lt;/li>
+&lt;li>&lt;strong>Print Server&lt;/strong>: geht ohne grossartige Konfiguration&lt;/li>
+&lt;li>&lt;strong>MQTT&lt;/strong>: unter &lt;em>Settings - Devices &amp;amp; Services&lt;/em> auf &lt;em>Add Integration&lt;/em> klicken
+&lt;ul>
+&lt;li>Nach MQTT suchen und installieren&lt;/li>
+&lt;li>In der Tile der MQTT Integration (unter &lt;em>Settings - Devices &amp;amp; Services&lt;/em>) auf &lt;em>Configure&lt;/em> klicken und entsprechende Daten eintragen (Zugangsdaten muessen vorger im &lt;a href="https://k4cg.org/index.php/Host:mqtt.intern.k4cg.org">MQTT Server&lt;/a> eingerichtet werden)&lt;/li>
+&lt;li>Dort gibts auch die Moeglichkeit, mit &lt;em>Listen to a topic&lt;/em> Nachrichten fuer ein bestimmtes Topic zu erhalten (nuetzlich fuer Debugging, z.B. &lt;code>sensors/#&lt;/code> eintragen)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Das Default Dashboard, das nach dem Login angezeigt wird, ist schreibgeschuetzt (kann ueber die drei Punkte rechts oben -&amp;gt; &lt;em>Edit Dashboard&lt;/em> aber geaendert werden, wenn man unbedingt moechte)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Auf dem Default Dashboard werden alle neu erkannten/konfigurierten Dinge angezeigt&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Unter &lt;em>Settings - Dashboards&lt;/em> koennen eigene Dashboards angelegt werden (in unserem Fall z.B. das Dashboard &lt;em>K4CG&lt;/em>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Die koennen fuer den schnellen Zugriff auch in der Sidebar auf der linken Seite hinterlegt werden&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Das klingt super! Wie fuege ich jetzt einen MQTT Sensor hinzu?&lt;/p>
+&lt;p>&lt;strong>TODO&lt;/strong> besser dokumentieren, wie man einen neuen Sensor hinzufuegt (MQTT Server, Topic, Payload, config.yaml, value_template, Dashboard, InfluxDB und Grafana)&lt;/p>
+&lt;ul>
+&lt;li>Custom Definitionen von Sensoren (z.B. &lt;code>sensors/door/default/status&lt;/code>) koenen in der config.yaml hinterlegt werden&lt;/li>
+&lt;li>Dazu ueber Settings -&amp;gt; Add-ons das &lt;code>File Editor&lt;/code> Add-on installieren, starten und in der Sidebar auswaehlen&lt;/li>
+&lt;li>Oder das VS Code Add-on installieren, damit koennen die Files mit VS Code direkt im Browser bearbeitet werden (bequemer, weil auto-complete und Syntaxcheck)&lt;/li>
+&lt;li>Beispiel für einen Sensor:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">mqtt&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sensor&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Door Status&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">value_template&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ value_json.value }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">state_topic&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;sensors/door/default/status&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">unique_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;sensor_door_status&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Danach ueber Developer Tools -&amp;gt; YAML -&amp;gt; YAML configuration reloading -&amp;gt; Manually configured MQTT entities die MQTT Dinge neu laden&lt;/li>
+&lt;li>Eventuell in eigenes Dashboard einbinden&lt;/li>
+&lt;li>Profit!&lt;/li>
+&lt;li>Docs:
+&lt;ul>
+&lt;li>&lt;a href="https://www.home-assistant.io/integrations/sensor">https://www.home-assistant.io/integrations/sensor&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://opensource.com/article/21/2/home-assistant-custom-sensors">https://opensource.com/article/21/2/home-assistant-custom-sensors&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.home-assistant.io/integrations/sensor.mqtt">https://www.home-assistant.io/integrations/sensor.mqtt&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.home-assistant.io/docs/configuration/templating/#processing-incoming-data">https://www.home-assistant.io/docs/configuration/templating/#processing-incoming-data&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Reload ggf. bei anderen Änderungen der Config notwendig, siehe &lt;a href="https://www.home-assistant.io/docs/configuration/">https://www.home-assistant.io/docs/configuration/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="sensors">Sensors&lt;/h2>
+&lt;h3 id="co2-sensor">CO2 Sensor&lt;/h3>
+&lt;ul>
+&lt;li>Projekt: N/A (noch nicht auf &lt;a href="https://k4cg.org">https://k4cg.org&lt;/a> dokumentiert)&lt;/li>
+&lt;li>Repo: &lt;a href="https://github.com/k4cg/sensors-misc">https://github.com/k4cg/sensors-misc&lt;/a>&lt;/li>
+&lt;li>Herstellerseite: &lt;a href="https://www.tfa-dostmann.de/en/product/co2-monitor-airco2ntrol-mini-31-5006/">https://www.tfa-dostmann.de/en/product/co2-monitor-airco2ntrol-mini-31-5006/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="co2">CO2&lt;/h4>
+&lt;ul>
+&lt;li>Payload: &lt;code>{ &amp;quot;co2&amp;quot;: 824, &amp;quot;_datestr&amp;quot;: &amp;quot;2022-09-22T19:45:05.000000&amp;quot;, &amp;quot;_timestamp&amp;quot;: 1663868705 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/co2sensor/default/co2&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>false&lt;/code>&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.co2 }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>ppm&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>co2&lt;/td>
+&lt;td>int (?)&lt;/td>
+&lt;td>824&lt;/td>
+&lt;td>0&amp;hellip;3000 ppm&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_datestr&lt;/td>
+&lt;td>date&lt;/td>
+&lt;td>YYYY-MM-DDTHH:MM:SS.000000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1663868639 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="temperature">Temperature&lt;/h4>
+&lt;ul>
+&lt;li>Payload: &lt;code>{ &amp;quot;_datestr&amp;quot;: &amp;quot;2022-09-22T19:45:05.000000&amp;quot;, &amp;quot;_timestamp&amp;quot;: 1663868705, &amp;quot;co2temp&amp;quot;: 22.8 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/co2sensor/default/temp&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>false&lt;/code>&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.co2temp }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>°C&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>co2temp&lt;/td>
+&lt;td>float&lt;/td>
+&lt;td>22.8 (1 Nachkommastelle?)&lt;/td>
+&lt;td>0&amp;hellip;+50 °C&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_datestr&lt;/td>
+&lt;td>date&lt;/td>
+&lt;td>YYYY-MM-DDTHH:MM:SS.000000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1663868639 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="matomat">Matomat&lt;/h3>
+&lt;ul>
+&lt;li>Projekt: &lt;a href="https://k4cg.org/index.php/Projekt:Matomat-Service">https://k4cg.org/index.php/Projekt:Matomat-Service&lt;/a>&lt;/li>
+&lt;li>Repo: &lt;a href="https://github.com/k4cg/matomat-service">https://github.com/k4cg/matomat-service&lt;/a>&lt;/li>
+&lt;li>Payload: &lt;code>{ &amp;quot;EventSource&amp;quot;: &amp;quot;matomat&amp;quot;, &amp;quot;EventName&amp;quot;: &amp;quot;total-items-consumed&amp;quot;, &amp;quot;EventTime&amp;quot;: 1664471592, &amp;quot;ItemID&amp;quot;: 14, &amp;quot;ItemName&amp;quot;: &amp;quot;Spezi&amp;quot;, &amp;quot;ItemCost&amp;quot;: 101, &amp;quot;TotalItemCount&amp;quot;: 62 }&lt;/code> (schickt noch andere Events, aber nur dieser Event wird im Value Template verwendet)&lt;/li>
+&lt;li>Topic: &lt;code>sensors/matomat/status&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>false&lt;/code> (sollte eigentliche &lt;code>true&lt;/code> sein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.TotalItemCount if value_json.ItemName == 'Club Mate' and value_json.EventName == 'total-items-consumed' else states('sensor.matomat_club_mate') }}&amp;quot;&lt;/code> (siehe auch &lt;a href="https://community.home-assistant.io/t/template-sensor-based-on-mqtt-data/325418">https://community.home-assistant.io/t/template-sensor-based-on-mqtt-data/325418&lt;/a>)&lt;/li>
+&lt;li>Unit: N/A&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>EventSource&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>&amp;ldquo;matomat&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EventName&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>&amp;ldquo;total-items-consumed&amp;rdquo;&lt;/td>
+&lt;td>&amp;ldquo;item-consumed&amp;rdquo;, &amp;ldquo;total-item-consumed-for-user-changed&amp;rdquo;, &amp;ldquo;total-items-consumed&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>EventTime&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1664471592 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ItemID&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>14&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ItemName&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>&amp;ldquo;Spezi&amp;rdquo;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ItemCost&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>101&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TotalItemCount&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>62&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ul>
+&lt;li>Debugging&lt;/li>
+&lt;/ul>
+&lt;h4 id="items-ausgeben-lassen">Items ausgeben lassen&lt;/h4>
+&lt;p>Geht auch direkt am Matomat, wenn man Admin ist.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -k https://matomat.intern.k4cg.org:8443/v0/auth/login -X POST -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;username=&amp;lt;username&amp;gt;&amp;amp;password=&amp;lt;password&amp;gt;&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.token&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -k https://matomat.intern.k4cg.org:8443/v0/items -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq &lt;span style="color:#4e9a06">&amp;#39;.[] | { name: .name, id: .id} &amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Club Mate&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Bier&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Apfelschorle&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Mate-Cola&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Flora&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Spezi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">14&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diese Werte koennen dann im Template verwendet werden.&lt;/p>
+&lt;h4 id="stats-ausgeben-lassen">Stats ausgeben lassen&lt;/h4>
+&lt;p>Geht auch direkt am Matomat, wenn man Admin ist.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -k https://matomat.intern.k4cg.org:8443/v0/auth/login -X POST -H &lt;span style="color:#4e9a06">&amp;#34;Content-Type: application/x-www-form-urlencoded&amp;#34;&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;username=&amp;lt;username&amp;gt;&amp;amp;password=&amp;lt;password&amp;gt;&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq -r &lt;span style="color:#4e9a06">&amp;#39;.token&amp;#39;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -k https://matomat.intern.k4cg.org:8443/v0/items/stats -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">TOKEN&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> jq &lt;span style="color:#4e9a06">&amp;#39;.[] | { name: .name, id: .id, consumed: .consumed }&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Club Mate&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;consumed&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">494&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Bier&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;consumed&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">880&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Apfelschorle&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;consumed&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">329&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Mate-Cola&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;consumed&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">217&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Flora&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">7&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;consumed&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">51&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Spezi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;id&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">14&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;consumed&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">62&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="debugging">Debugging&lt;/h4>
+&lt;p>MQTT Config:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mqtt:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> client_id: matomat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connection_string: tcp://192.168.5.20:1883
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> topic: sensors/matomat/status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> username: matomat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password: &amp;lt;password&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> retain_messages: True
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Das Passwort findet sich im entweder auf dem &lt;a href="https://k4cg.org/index.php/Host:matomat.intern.k4cg.org">Matomat&lt;/a> selbst oder in der Konfig unseres &lt;a href="https://k4cg.org/index.php/Host:mqtt.intern.k4cg.org">MQTT Brokers&lt;/a>.&lt;/p>
+&lt;p>Zum Debugging kann man sich dann eine Nachricht zusammenbauen und die an das Topic &lt;code>sensors/matomat/status&lt;/code> schicken, z.B. so etwas:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;EventSource&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;matomat&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;EventName&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;total-items-consumed&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;EventTime&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1655553901&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ItemID&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">14&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ItemName&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Spezi&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;ItemCost&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">101&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;TotalItemCount&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">60&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Das sog. Value Template aktualisiert den Wert des jeweiligen Sensors im Homeassistant nur, wenn der EventName &lt;code>total-items-consumed&lt;/code> ist (siehe Homeassi &lt;code>configuration.yaml&lt;/code>). Die &lt;code>ItemID&lt;/code> bekommt man mit einem &lt;a href="#items-ausgeben-lassen">curl Befehl&lt;/a>.&lt;/p>
+&lt;p>Download von Debug Informationen der MQTT Integration: &lt;em>Settings - Devices &amp;amp; Services&lt;/em>, Klick auf die drei Punkte in der MQTT Tile -&amp;gt; Download diagnostics&lt;/p>
+&lt;p>Die Logs unter &lt;em>Settings - System - Logs&lt;/em> sind auch manchmal hilfreich.&lt;/p>
+&lt;h3 id="door-status">door-status&lt;/h3>
+&lt;ul>
+&lt;li>Projekt: &lt;a href="https://k4cg.org/index.php/Projekt:door-status">https://k4cg.org/index.php/Projekt:door-status&lt;/a>&lt;/li>
+&lt;li>Repo: &lt;a href="https://github.com/k4cg/door-status">https://github.com/k4cg/door-status&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="temperature-1">Temperature&lt;/h4>
+&lt;ul>
+&lt;li>Payload: &lt;code>{ &amp;quot;_datestr&amp;quot;: &amp;quot;2022-09-22T17:43:59.000000&amp;quot;, &amp;quot;value&amp;quot;: 21.58, &amp;quot;_timestamp&amp;quot;: 1663868639 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/door/default/bme280/temperature&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code> (HA sagt nein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.value }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>°C&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>value&lt;/td>
+&lt;td>float&lt;/td>
+&lt;td>123.45 (2 Nachkommastellen)&lt;/td>
+&lt;td>-40.00&amp;hellip;+85.00 °C&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_datestr&lt;/td>
+&lt;td>date&lt;/td>
+&lt;td>YYYY-MM-DDTHH:MM:SS.000000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1663868639 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="humidity">Humidity&lt;/h4>
+&lt;ul>
+&lt;li>Payload: &lt;code>{ &amp;quot;_datestr&amp;quot;: &amp;quot;2022-09-22T17:43:59.000000&amp;quot;, &amp;quot;value&amp;quot;: 38.27, &amp;quot;_timestamp&amp;quot;: 1663868639 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/door/default/bme280/humidity&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code> (HA sagt nein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.value }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>% RH&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>value&lt;/td>
+&lt;td>float&lt;/td>
+&lt;td>34.56 (2 Nachkommastellen)&lt;/td>
+&lt;td>0.00&amp;hellip;100.00 %&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_datestr&lt;/td>
+&lt;td>date&lt;/td>
+&lt;td>YYYY-MM-DDTHH:MM:SS.000000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1663868639 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="pressure">Pressure&lt;/h4>
+&lt;ul>
+&lt;li>Payload: &lt;code>{ &amp;quot;_datestr&amp;quot;: &amp;quot;2022-09-22T17:43:59.000000&amp;quot;, &amp;quot;value&amp;quot;: 982.76, &amp;quot;_timestamp&amp;quot;: 1663868639 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/door/default/bme280/pressure&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code> (HA sagt nein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.value }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>hPa&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>value&lt;/td>
+&lt;td>float&lt;/td>
+&lt;td>901.56 (2 Nachkommastellen)&lt;/td>
+&lt;td>300.00&amp;hellip;1100.00 hPa&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_datestr&lt;/td>
+&lt;td>date&lt;/td>
+&lt;td>YYYY-MM-DDTHH:MM:SS.000000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1663868639 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="status">Status&lt;/h4>
+&lt;ul>
+&lt;li>Payload: &lt;code>{ &amp;quot;_datestr&amp;quot;: &amp;quot;2022-09-22T17:43:59.000000&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;open&amp;quot;, &amp;quot;_timestamp&amp;quot;: 1663868639 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/door/default/status&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code> (HA sagt nein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt binary_sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.value }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: N/A&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>value&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>&amp;ldquo;open&amp;rdquo;&lt;/td>
+&lt;td>&amp;ldquo;open&amp;rdquo;, &amp;ldquo;closed&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_datestr&lt;/td>
+&lt;td>date&lt;/td>
+&lt;td>YYYY-MM-DDTHH:MM:SS.000000&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1663868639 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="tennis">Tennis&lt;/h3>
+&lt;ul>
+&lt;li>Projekt: &lt;a href="https://k4cg.org/index.php/Host:tennis.intern.k4cg.org">https://k4cg.org/index.php/Host:tennis.intern.k4cg.org&lt;/a>&lt;/li>
+&lt;li>Repo: &lt;a href="https://github.com/Tinkerforge/brick-mqtt-proxy">https://github.com/Tinkerforge/brick-mqtt-proxy&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="temperature-2">Temperature&lt;/h4>
+&lt;ul>
+&lt;li>Doku: &lt;a href="https://www.tinkerforge.com/en/doc/Hardware/Bricklets/Temperature.html#temperature-bricklet">https://www.tinkerforge.com/en/doc/Hardware/Bricklets/Temperature.html#temperature-bricklet&lt;/a>&lt;/li>
+&lt;li>Payload: &lt;code>{ &amp;quot;_timestamp&amp;quot;: 1663870803.199035, &amp;quot;temperature&amp;quot;: 2443 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/tischtennis/bricklet/temperature/tfj/temperature&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code> (HA sagt nein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.temperature | float / 100 | round(2) }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>°C&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>temperature&lt;/td>
+&lt;td>int (?)&lt;/td>
+&lt;td>1234&lt;/td>
+&lt;td>-40°C&amp;hellip;+125°C&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>float&lt;/td>
+&lt;td>1663870803.199035 (unix timestamp???)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="sound-intensity">Sound Intensity&lt;/h4>
+&lt;ul>
+&lt;li>Doku: &lt;a href="https://www.tinkerforge.com/en/doc/Hardware/Bricklets/Sound_Intensity.html">https://www.tinkerforge.com/en/doc/Hardware/Bricklets/Sound_Intensity.html&lt;/a>&lt;/li>
+&lt;li>Payload: &lt;code>{ &amp;quot;intensity&amp;quot;: 1433, &amp;quot;_timestamp&amp;quot;: 1663871103.167636 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/tischtennis/bricklet/sound_intensity/voE/intensity&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code> (HA sagt nein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.intensity }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>N/A&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>intensity&lt;/td>
+&lt;td>int (?)&lt;/td>
+&lt;td>1433&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>float&lt;/td>
+&lt;td>1663871103.167636 (unix timestamp???)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="uv-light">UV Light&lt;/h4>
+&lt;ul>
+&lt;li>Payload: &lt;code>{ &amp;quot;uv_light&amp;quot;: 0, &amp;quot;_timestamp&amp;quot;: 1663851602.851641 }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/tischtennis/bricklet/uv_light/xpa/uv_light&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code> (HA sagt nein)&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.uv_light }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>µW/cm²&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>uv_light&lt;/td>
+&lt;td>int (?)&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>0&amp;hellip;1 (?)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>float&lt;/td>
+&lt;td>1663871103.167636 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="wifi">Wifi&lt;/h3>
+&lt;ul>
+&lt;li>Projekt: &lt;a href="https://k4cg.org/index.php/Projekt:wifi2mqtt">https://k4cg.org/index.php/Projekt:wifi2mqtt&lt;/a>&lt;/li>
+&lt;li>Repo: &lt;a href="https://github.com/k4cg/wifi2mqtt">https://github.com/k4cg/wifi2mqtt&lt;/a>&lt;/li>
+&lt;li>Payload: &lt;code>{ &amp;quot;online&amp;quot;: 7, &amp;quot;_timestamp&amp;quot;: &amp;quot;2022-09-22 19:45:33.167346&amp;quot; }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/wifi/online&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>false&lt;/code>&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.online }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>N/A&lt;/code>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> im Grafana eingebaut?&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>online&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>7&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>date&lt;/td>
+&lt;td>YYYY-MM-DD HH:MM:SS.ffffff&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="octopi">OctoPi&lt;/h3>
+&lt;ul>
+&lt;li>Projekt: &lt;a href="https://k4cg.org/index.php/Host:octopi.intern.k4cg.org">https://k4cg.org/index.php/Host:octopi.intern.k4cg.org&lt;/a>&lt;/li>
+&lt;li>Repo: &lt;a href="https://github.com/OctoPrint/OctoPrint-MQTT">https://github.com/OctoPrint/OctoPrint-MQTT&lt;/a>&lt;/li>
+&lt;li>Payload: &lt;code>{ &amp;quot;progress&amp;quot;: 100, &amp;quot;_timestamp&amp;quot;: 1625572970, &amp;quot;location&amp;quot;: &amp;quot;local&amp;quot;, &amp;quot;path&amp;quot;: &amp;quot;usb_cable_holder_v10_0.15mm_PLA_MK3_1h7m.gcode&amp;quot; }&lt;/code>&lt;/li>
+&lt;li>Topic: &lt;code>sensors/octopi/progress/printing&lt;/code>&lt;/li>
+&lt;li>Retain: &lt;code>true&lt;/code>&lt;/li>
+&lt;li>Type: &lt;code>mqtt sensor&lt;/code>&lt;/li>
+&lt;li>value_template: &lt;code>&amp;quot;{{ value_json.progress }}&amp;quot;&lt;/code>&lt;/li>
+&lt;li>Unit: &lt;code>%&lt;/code>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> im Grafana eingebaut? &lt;strong>TODO&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Property&lt;/th>
+&lt;th>Datentyp&lt;/th>
+&lt;th>Format&lt;/th>
+&lt;th>Wertebereich&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>progress&lt;/td>
+&lt;td>int (?)&lt;/td>
+&lt;td>100 (?)&lt;/td>
+&lt;td>0&amp;hellip;100 (?)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>location&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>&amp;ldquo;local&amp;rdquo;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>path&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>&amp;ldquo;foo.gcode&amp;rdquo;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>_timestamp&lt;/td>
+&lt;td>int&lt;/td>
+&lt;td>1663868639 (unix timestamp)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="sensor-referenzen">Sensor Referenzen&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://www.home-assistant.io/integrations/sensor.mqtt">https://www.home-assistant.io/integrations/sensor.mqtt&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.home-assistant.io/integrations/sensor/#device-class">https://www.home-assistant.io/integrations/sensor/#device-class&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="templates">Templates&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.home-assistant.io/docs/configuration/templating">https://www.home-assistant.io/docs/configuration/templating&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="dashboards">Dashboards&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.home-assistant.io/dashboards">https://www.home-assistant.io/dashboards&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.home-assistant.io/dashboards/views/">https://www.home-assistant.io/dashboards/views/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.home-assistant.io/dashboards/cards/">https://www.home-assistant.io/dashboards/cards/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="automatisierung">Automatisierung&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.home-assistant.io/docs/automation">https://www.home-assistant.io/docs/automation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.home-assistant.io/docs/automation/action/">https://www.home-assistant.io/docs/automation/action/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.home-assistant.io/docs/scripts/">https://www.home-assistant.io/docs/scripts/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="schoene-namen">Schoene Namen&lt;/h2>
+&lt;ul>
+&lt;li>Die Namen fuer Entities und Devices lassen sich in der UI und mit Eintraegen in den Config Files anpassen: &lt;a href="https://www.home-assistant.io/docs/configuration/customizing-devices/">https://www.home-assistant.io/docs/configuration/customizing-devices/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="wireguard-verbindung-zu-rumpl">Wireguard Verbindung zu rumpl&lt;/h2>
+&lt;h3 id="vorbereitungen">Vorbereitungen&lt;/h3>
+&lt;ul>
+&lt;li>VPN IP (aus dem Bereich &lt;code>192.168.42.0/24&lt;/code>) im Wiki hinterlegen (&lt;a href="https://k4cg.org/index.php/Hosts">https://k4cg.org/index.php/Hosts&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="konfiguration-rumpl">Konfiguration rumpl&lt;/h3>
+&lt;ul>
+&lt;li>Verbindung: &lt;code>ssh &amp;lt;user:in&amp;gt;@rumpl.k4cg.org&lt;/code>&lt;/li>
+&lt;li>Wireguard Key generieren (&lt;a href="https://www.wireguard.com/quickstart/">https://www.wireguard.com/quickstart/&lt;/a>)&lt;/li>
+&lt;li>Wireguard Konfig bearbeiten (&lt;a href="https://k4cg.org/index.php/Projekt:VPN#Wie_kann_auch_meine_Ger.C3.A4t_in_das_VPN.3F">https://k4cg.org/index.php/Projekt:VPN#Wie_kann_auch_meine_Ger.C3.A4t_in_das_VPN.3F&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">allowedIPs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;192.168.42.5/32&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">];&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># VPN IP homeassi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">publicKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;ZdIZn2naS0yDN8OxFXzj7jf0dvNrStUk6bjjytvIkVw=&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># wg pubkey &amp;lt; privatekey &amp;gt; publickey&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="konfiguration-im-home-assistant">Konfiguration im Home Assistant&lt;/h3>
+&lt;ul>
+&lt;li>Repo hinzufuegen und &lt;code>wireguard-client&lt;/code> Addon installieren (&lt;a href="https://github.com/bigmoby/hassio-repository-addon">https://github.com/bigmoby/hassio-repository-addon&lt;/a>)&lt;/li>
+&lt;li>Konfig im Homeassi:
+&lt;ul>
+&lt;li>Start on boot und Watchdog aktivieren (Addon wird neu gestartet, falls es crasht)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">interface&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">private_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;private_key&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">address&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">192.168.42.5&lt;/span>&lt;span style="color:#000">/24&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">dns&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">8.8.8.8&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">8.8.4.4&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">post_up&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">iptables -t nat -A POSTROUTING -o wg0 -j MASQUERADE&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">post_down&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">iptables -t nat -D POSTROUTING -o wg0 -j MASQUERADE&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">peers&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">public_key&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">fY0GiZHUVGSyuteTwrWTnBpURiGOwtJtP0p4gxBj8UY=&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">213.95.154.150&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">51666&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">allowed_ips&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">192.168.42.0&lt;/span>&lt;span style="color:#000">/24&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">persistent_keep_alive&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;25&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">log_level&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">debug&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># anpassen, wenn alles funktioniert&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="alte-homeassi-konfig">Alte Homeassi Konfig&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>root@homeassi:~# cat /etc/wireguard/wg-rumpl.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>Interface&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">PrivateKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">Address&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 192.168.42.5/24
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>Peer&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">PublicKey&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#000">fY0GiZHUVGSyuteTwrWTnBpURiGOwtJtP0p4gxBj8UY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">AllowedIPs&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 192.168.42.0/24
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">Endpoint&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> 213.95.154.150:51666
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="influxdb-addon">InfluxDB Addon&lt;/h2>
+&lt;h3 id="vorbereitungen-1">Vorbereitungen&lt;/h3>
+&lt;h4 id="rumpl">rumpl&lt;/h4>
+&lt;ul>
+&lt;li>Admin Zugangsdaten fuer InfluxDB: &lt;code>pass Sites/graphs.k4cg.org&lt;/code>&lt;/li>
+&lt;li>Datenbank und User in der InfluxDB anlegen (&lt;a href="https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/#creating-a-database">https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/#creating-a-database&lt;/a> und &lt;a href="https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/">https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo -iu root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>influx --username admin --password &lt;span style="color:#4e9a06">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: &lt;span style="color:#8f5902;font-style:italic"># InfluxDB admin Passwort aus pass &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; CREATE DATABASE &amp;lt;homeassi_db_name&amp;gt; &lt;span style="color:#8f5902;font-style:italic"># home_assistant; alte DB: homeassi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; CREATE USER &amp;lt;homeassi_user&amp;gt; WITH PASSWORD &lt;span style="color:#4e9a06">&amp;#39;&amp;lt;user-password&amp;gt;&amp;#39;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># homeassi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; GRANT ALL ON &amp;lt;homeassi_db_name&amp;gt; TO &amp;lt;homeassi_user&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; SHOW GRANTS FOR &amp;lt;homeassi_user&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; GRANT READ ON home_assistant TO grafana &lt;span style="color:#8f5902;font-style:italic"># falls die Daten auch in Grafana verfuegbar sein sollen &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; SHOW GRANTS FOR grafana
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="homeassi-konfig">Homeassi Konfig&lt;/h4>
+&lt;p>Folgendes in der &lt;code>configuration.yaml&lt;/code> eintragen:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">influxdb&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">192.168.42.1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">8086&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">database&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">home_assistant&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">username&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">homeassi&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">password&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;password&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># ssl: true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># verify_ssl: true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">max_retries&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># default_measurement: state&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># exclude:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># entities:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># - entity.id1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># - entity.id2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># domains:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># - automation&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># include:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># entities:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># - entity.id3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># - entity.id4&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">tags&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># instance: prod&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">hass&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Die Konfig muss wahrscheinlich noch ein bisschen angepasst werden. Hier gibts eine Uebersicht, wie man rausfinden kann, was so alles in der Datenbank landet:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.influxdata.com/influxdb/v1.8/query_language/explore-data/">https://docs.influxdata.com/influxdb/v1.8/query_language/explore-data/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.influxdata.com/influxdb/v1.8/query_language/explore-schema/">https://docs.influxdata.com/influxdb/v1.8/query_language/explore-schema/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="ssh-addon">SSH Addon&lt;/h2>
+&lt;ul>
+&lt;li>Addon installieren&lt;/li>
+&lt;li>In den Addon Einstellungen Public Key(s) hinterlegen, Port konfigurieren&lt;/li>
+&lt;li>Verbindung mit &lt;code>ssh -i ~/path/to/private_key -p &amp;lt;port&amp;gt; root@&amp;lt;home_assi_ip&amp;gt;&lt;/code>&lt;/li>
+&lt;li>HA CLI: &lt;a href="https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line">https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Taxonomy Support</title><link>/docs/adding-content/taxonomy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/adding-content/taxonomy/</guid><description>
 &lt;p>Docsy supports Hugo&amp;rsquo;s Taxonomies (see: &lt;a href="https://gohugo.io/content-management/taxonomies/">https://gohugo.io/content-management/taxonomies/&lt;/a>) in its docs and blog section. You can see the default layout and can test the behavior of the generated links on this page.&lt;/p>
 &lt;h2 id="terminology">Terminology&lt;/h2>
 &lt;p>To understand the usage of taxonomies you should understand the following terminology:&lt;/p>
@@ -7205,4 +8004,70 @@ id="tabs-17-03" role="tabpanel" aria-labelled-by="tabs-17-03-tab">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div></description></item><item><title>Docs: Deployment mit Gitlab Pages</title><link>/docs/homeassi/deploy-with-gitlab-pages/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>/docs/homeassi/deploy-with-gitlab-pages/</guid><description>
+&lt;ul>
+&lt;li>Branch &lt;code>gh-pages&lt;/code> anlegen (&lt;a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&lt;/a>)&lt;/li>
+&lt;li>Github Workflow &lt;code>.github/workflows/gh-pages.yml&lt;/code> anlegen (&lt;a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a>)&lt;/li>
+&lt;li>Docsy spezifische Dinge einbauen (&lt;a href="https://github.com/marketplace/actions/hugo-setup#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli">https://github.com/marketplace/actions/hugo-setup#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli&lt;/a>)&lt;/li>
+&lt;li>&lt;code>npm install&lt;/code> ausfuehren, um &lt;code>package-lock.json&lt;/code> zu erzeugen&lt;/li>
+&lt;li>&lt;code>.gitignore&lt;/code> anpassen (&lt;code>package-lock.json&lt;/code> entfernen)&lt;/li>
+&lt;li>baseURL = &amp;ldquo;&lt;a href="https://k4cg.github.io/homeassi%22">https://k4cg.github.io/homeassi&amp;quot;&lt;/a> in &lt;code>config.toml&lt;/code> eintragen&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Homeassi Todos</title><link>/docs/homeassi/homeassi-todos/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>/docs/homeassi/homeassi-todos/</guid><description>
+&lt;h2 id="doku">Doku&lt;/h2>
+&lt;ul>
+&lt;li>Evtl. Issues fuer die einzelnen Punkte erstellen&lt;/li>
+&lt;li>Diese Seite als Grundlage fuer die Doku nehmen: &lt;a href="https://docsy.dev/docs/">Docsy User Guide&lt;/a> (Repo: &lt;a href="https://github.com/google/docsy/tree/master/userguide">Docsy theme repo&lt;/a>)&lt;/li>
+&lt;li>Installation und Verwendung Docsy/Hugo dokumentieren&lt;/li>
+&lt;li>Publishen mit Github Actions&lt;/li>
+&lt;li>About Sektion schreiben (&amp;ldquo;Everything IoT. Homeassistant, MQTT, sensors, status, InfluxDB, Grafana, etc.&amp;rdquo;)&lt;/li>
+&lt;li>Blogpost(s) schreiben (was soll das alles, wozu gibt es diese Seite, Ist-Zustand, Plan, Progress Reports)&lt;/li>
+&lt;li>Doku vervollstaendigen (Grafana Dashboard erstellen, InfluxDB Aufbau und zugriff, wie baut man ein neues Getränk ein, wie baut man einen neuen (MQTT) Sensor ein)&lt;/li>
+&lt;li>Dashboards dokumentieren&lt;/li>
+&lt;li>Diagramm malen
+&lt;ul>
+&lt;li>Zeug in der K4:
+&lt;ul>
+&lt;li>Sensoren&lt;/li>
+&lt;li>wifi2mqtt&lt;/li>
+&lt;li>mqtt2spacestatus&lt;/li>
+&lt;li>Dinge auf mqtt Server, die hier noch nicht aufgelistet sind&lt;/li>
+&lt;li>Apache mit status.json&lt;/li>
+&lt;li>k4cgrouter mit Port Forwarding&lt;/li>
+&lt;li>Space API?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Zeug auf rumpl:
+&lt;ul>
+&lt;li>Grafana&lt;/li>
+&lt;li>InfluxDB&lt;/li>
+&lt;li>sensor-fetcher&lt;/li>
+&lt;li>Telegraf? Apache Metrics?&lt;/li>
+&lt;li>Zusätzliche Metriken (Wetter?)&lt;/li>
+&lt;li>Dinge auf rumpl, die hier noch nicht aufgelistet sind&lt;/li>
+&lt;li>Wie kommen die Daten ueberhaupt in die InfluxDB auf der rumpl? Scheinbar mit diesem Skript: &lt;code>/usr/local/sensor-fetcher/fetch.py&lt;/code>. Das fragt die &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">status.json&lt;/a> ab und schreibt die Werte in die InfluxDB &lt;code>sensors&lt;/code>&lt;/li>
+&lt;li>Graphs haben teilweise &lt;code>InfluxDB-wip&lt;/code> als Data source (InfluxDB Datenbank &lt;code>wip&lt;/code>). Auf &lt;code>mqtt.intern.k4cg.org&lt;/code> laeuft ein telegraf, der hat einen Output, bei dem die InfluxDB Datenbank &lt;code>wip&lt;/code> konfiguriert ist. Der Input ist per MQTT (&lt;code>sensors/#&lt;/code>).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="homeassi">Homeassi&lt;/h2>
+&lt;ul>
+&lt;li>Automatisches Backup einrichten (&lt;a href="https://addons.mathesonsteplock.ca/docs/addons/remote-backup/basic-config/">https://addons.mathesonsteplock.ca/docs/addons/remote-backup/basic-config/&lt;/a>)&lt;/li>
+&lt;li>Daten prüfen (Matomat Sensoren, Payload checken)&lt;/li>
+&lt;li>Graphs auf neue Daten umbauen&lt;/li>
+&lt;li>InfluxDB Config Homeassi checken (include, exclude, evtl. Domains für Sensoren festlegen und das uebrige Zeug excluden, damit nichts unnoetiges gespeichert wird)&lt;/li>
+&lt;li>InfluxDB aufräumen (altes Zeug Homeassi)&lt;/li>
+&lt;li>API:
+&lt;ul>
+&lt;li>Queries machen und Daten checken&lt;/li>
+&lt;li>Python Skript (nur mit Logik) schreiben&lt;/li>
+&lt;li>API mit fastapi bauen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Customizations einbauen?&lt;/li>
+&lt;li>Evtl. Device bei den Sensoren eintragen&lt;/li>
+&lt;li>Repo aufräumen (&lt;a href="https://github.com/k4cg/k4cg-automation">https://github.com/k4cg/k4cg-automation&lt;/a> und dieses Repo)&lt;/li>
+&lt;li>Evtl. neue VM provisionieren&lt;/li>
+&lt;li>Cleanup Zeug in Playbook einbauen (k4cg-automation)&lt;/li>
+&lt;/ul></description></item></channel></rss>
