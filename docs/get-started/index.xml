@@ -1,0 +1,366 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Get started</title><link>/docs/get-started/</link><description>Recent content in Get started on Goldydocs</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="/docs/get-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Use Docsy as a Hugo Module</title><link>/docs/get-started/docsy-as-module/</link><pubDate>Wed, 08 Dec 2021 10:33:16 +0100</pubDate><guid>/docs/get-started/docsy-as-module/</guid><description>
+&lt;p>&lt;a href="https://gohugo.io/hugo-modules/">Hugo modules&lt;/a> are the simplest and latest way to use Hugo themes like Docsy when building a website. Hugo uses the modules mechanism to pull in the theme files from the main Docsy repo at your chosen revision, and it’s easy to keep the theme up to date in your site. Our example site uses Docsy as a Hugo module.&lt;/p>
+&lt;p>To find out about other setup approaches, see our &lt;a href="/docs/get-started/">Get started&lt;/a> overview. If you want to migrate an existing Docsy site to use Hugo Modules, see our &lt;a href="/docs/updating/convert-site-to-module/">migration guide&lt;/a>.&lt;/p>
+&lt;h2 id="setup-options-with-hugo-modules">Setup options with Hugo Modules&lt;/h2>
+&lt;p>To use Docsy as a Hugo Module, you have a couple of options:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Copy and edit the source for the &lt;a href="https://github.com/google/docsy-example">Docsy example site&lt;/a>.&lt;/strong> This approach gives you a skeleton structure for your site, with top-level and documentation sections and templates that you can modify as necessary. The example site uses Docsy as a Hugo Module.&lt;/li>
+&lt;li>&lt;strong>Build your own site using the Docsy theme.&lt;/strong> Specify the &lt;a href="https://github.com/google/docsy">Docsy theme&lt;/a> like any other &lt;a href="https://gohugo.io/themes/">Hugo theme&lt;/a> when creating or updating your site. With this option, you&amp;rsquo;ll get Docsy look and feel, navigation, and other features, but you&amp;rsquo;ll need to specify your own site structure.&lt;/li>
+&lt;/ul>
+&lt;p>If you&amp;rsquo;re a beginner, we recommend that you get started by copying our example site. If you&amp;rsquo;re already familiar with Hugo or want a very different site structure, you can follow our guide to start a site from scratch, which gives you maximum flexibility at the cost of higher implementation effort. In both cases you need to follow our prerequisites guide to make sure that you have installed Hugo and all necessary dependencies.&lt;/p></description></item><item><title>Docs: Other setup options</title><link>/docs/get-started/other-options/</link><pubDate>Wed, 08 Dec 2021 09:22:27 +0100</pubDate><guid>/docs/get-started/other-options/</guid><description>
+&lt;p>If you don&amp;rsquo;t want to use
+&lt;a href="/docs/get-started/docsy-as-module/">Docsy as a Hugo Module&lt;/a> (for example if you
+do not want to install Go) but still don&amp;rsquo;t want to copy the theme files into
+your own repo, you can &lt;strong>use Docsy as a
+&lt;a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git submodule&lt;/a>&lt;/strong>. Using
+submodules also lets Hugo use the theme files from Docsy repo, though is more
+complicated to maintain than the Hugo Modules approach. This is the approach
+used in older versions of the Docsy example site, and is still supported. If you
+are using Docsy as a submodule but would like to migrate to Hugo Modules, see
+our &lt;a href="">migration guide&lt;/a>.&lt;/p>
+&lt;p>Alternatively if you don’t want Hugo to have to get the theme files from an
+external repo (for example, if you want to customize and maintain your own copy
+of the theme directly, or your deployment choice requires you to include a copy
+of the theme in your repository), you can &lt;strong>clone the files directly into your
+site source&lt;/strong>.&lt;/p>
+&lt;p>Finally, you can &lt;strong>install
+&lt;a href="#option-3-docsy-as-an-npm-package">Docsy as an NPM package&lt;/a>&lt;/strong>.&lt;/p>
+&lt;p>This guide provides instructions for all of these options, along with common
+prerequisites.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;h3 id="install-hugo">Install Hugo&lt;/h3>
+&lt;p>You need a
+&lt;a href="https://github.com/gohugoio/hugo/releases">recent &lt;strong>extended&lt;/strong> version&lt;/a> (we
+recommend version 0.73.0 or later) of &lt;a href="https://gohugo.io/">Hugo&lt;/a> to do local
+builds and previews of sites (like this one) that use Docsy. If you install from
+the release page, make sure to get the &lt;code>extended&lt;/code> Hugo version, which supports
+&lt;a href="https://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html">SCSS&lt;/a>; you
+may need to scroll down the list of releases to see it.&lt;/p>
+&lt;p>For comprehensive Hugo documentation, see &lt;a href="https://gohugo.io/">gohugo.io&lt;/a>.&lt;/p>
+&lt;h4 id="on-linux">On Linux&lt;/h4>
+&lt;p>Be careful using &lt;code>sudo apt-get install hugo&lt;/code>, as it
+&lt;a href="https://gohugo.io/getting-started/installing/#debian-and-ubuntu">doesn&amp;rsquo;t get you the &lt;code>extended&lt;/code> version for all Debian/Ubuntu versions&lt;/a>,
+and may not be up-to-date with the most recent Hugo version.&lt;/p>
+&lt;p>If you&amp;rsquo;ve already installed Hugo, check your version:&lt;/p>
+&lt;pre tabindex="0">&lt;code>hugo version
+&lt;/code>&lt;/pre>&lt;p>If the result is &lt;code>v0.73&lt;/code> or earlier, or if you don&amp;rsquo;t see &lt;code>Extended&lt;/code>, you&amp;rsquo;ll need
+to install the latest version. You can see a complete list of Linux installation
+options in &lt;a href="https://gohugo.io/getting-started/installing/#linux">Install Hugo&lt;/a>.
+The following shows you how to install Hugo from the release page:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to the &lt;a href="https://github.com/gohugoio/hugo/releases">Hugo releases&lt;/a> page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the most recent release, scroll down until you find a list of
+&lt;strong>Extended&lt;/strong> versions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Download the latest extended version
+(&lt;code>hugo_extended_0.9X_Linux-64bit.tar.gz&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new directory:&lt;/p>
+&lt;pre>&lt;code>mkdir hugo
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;li>
+&lt;p>Extract the files you downloaded to &lt;code>hugo&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Switch to your new directory:&lt;/p>
+&lt;pre>&lt;code>cd hugo
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;li>
+&lt;p>Install Hugo:&lt;/p>
+&lt;pre>&lt;code>sudo install hugo /usr/bin
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="on-macos">On macOS&lt;/h4>
+&lt;p>Install Hugo using
+&lt;a href="https://gohugo.io/getting-started/installing/#homebrew-macos">Brew&lt;/a>.&lt;/p>
+&lt;h4 id="as-an-npm-module">As an NPM module&lt;/h4>
+&lt;p>You can install Hugo as an NPM module using
+&lt;a href="https://www.npmjs.com/package/hugo-extended">hugo-extended&lt;/a>. To install the
+extended version of Hugo:&lt;/p>
+&lt;pre tabindex="0">&lt;code>npm install hugo-extended --save-dev
+&lt;/code>&lt;/pre>&lt;h3 id="node-get-the-latest-lts-release">Node: Get the latest LTS release&lt;/h3>
+&lt;p>If you have Node installed already, check your version of Node. For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>node -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Install or upgrade your version of Node to the &lt;strong>active &lt;a href="https://nodejs.org/en/about/releases/">LTS release&lt;/a>&lt;/strong>. We
+recommend using &lt;strong>&lt;a href="https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating">nvm&lt;/a>&lt;/strong> to manage your Node installation (Linux command
+shown):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>nvm install --lts
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-postcss">Install PostCSS&lt;/h3>
+&lt;p>To build or update your site&amp;rsquo;s CSS resources, you&amp;rsquo;ll also need
+&lt;a href="https://postcss.org/">PostCSS&lt;/a>. Install it using the Node package manager,
+&lt;code>npm&lt;/code>.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">IMPORTANT: Check your Node version&lt;/h4>
+The PostCSS package installed by some older versions of Node is incompatible
+with Docsy. Check your version of Node against the &lt;strong>active &lt;a href="https://nodejs.org/en/about/releases/">LTS release&lt;/a>&lt;/strong>
+and upgrade, if necessary. For details, see &lt;a href="#node-get-the-latest-lts-release">Node: Get the latest LTS
+release&lt;/a>.
+&lt;/div>
+&lt;p>From your project root, run this command:&lt;/p>
+&lt;pre tabindex="0">&lt;code>npm install --save-dev autoprefixer postcss-cli postcss
+&lt;/code>&lt;/pre>&lt;h2 id="option-1-docsy-as-a-git-submodule">Option 1: Docsy as a Git submodule&lt;/h2>
+&lt;h3 id="for-a-new-site">For a new site&lt;/h3>
+&lt;p>To create a &lt;strong>new site&lt;/strong> and add the Docsy theme as a Git submodule, run the
+following commands:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create the site:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>hugo new site myproject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> myproject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Install postCSS as &lt;a href="#install-postcss">instructed earlier&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Follow the instructions below for an existing site.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="for-an-existing-site">For an existing site&lt;/h3>
+&lt;p>To add the Docsy theme to an &lt;strong>existing site&lt;/strong>, run the following commands from
+your project&amp;rsquo;s root directory:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Install Docsy as a Git submodule:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git submodule add --depth &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> https://github.com/google/docsy.git themes/docsy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add Docsy as a theme, for example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;theme = &amp;#34;docsy&amp;#34;&amp;#39;&lt;/span> &amp;gt;&amp;gt; config.toml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Get Docsy dependencies:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87">cd&lt;/span> themes/docsy &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> npm install&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>(Optional but recommended) To avoid having to repeat the previous step every
+time you update Docsy, consider adding &lt;a href="https://docs.npmjs.com/cli/v8/using-npm/scripts">NPM scripts&lt;/a> like the following to
+your project&amp;rsquo;s &lt;code>package.json&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;get:submodule&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;git submodule update --init --depth 1&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;_prepare:docsy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;cd themes/docsy &amp;amp;&amp;amp; npm install&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;prepare&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;npm run get:submodule &amp;amp;&amp;amp; npm run _prepare:docsy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;...&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Every time you run &lt;code>npm install&lt;/code> from your project root, the &lt;code>prepare&lt;/code>
+script will fetch the latest version of Docsy and its dependencies.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>From this point on, build and serve your site using the usual Hugo commands, for
+example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>hugo serve
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="option-2-clone-the-docsy-theme">Option 2: Clone the Docsy theme&lt;/h2>
+&lt;p>If you don&amp;rsquo;t want to use a submodules (for example, if you want to customize and
+maintain your own copy of the theme directly, or your deployment choice requires
+you to include a copy of the theme in your repository), you can clone the theme
+into your project&amp;rsquo;s &lt;code>themes&lt;/code> subdirectory.&lt;/p>
+&lt;p>To clone Docsy into your project&amp;rsquo;s &lt;code>theme&lt;/code> folder, run the following commands
+from your project&amp;rsquo;s root directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> themes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/google/docsy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> docsy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Consider setting up an NPM &lt;a href="https://docs.npmjs.com/cli/v8/using-npm/scripts#prepare-and-prepublish">prepare&lt;/a> script, as documented in Option 1.&lt;/p>
+&lt;p>For more information, see
+&lt;a href="https://gohugo.io/hugo-modules/theme-components/">Theme Components&lt;/a> on the
+&lt;a href="https://gohugo.io">Hugo&lt;/a> site.&lt;/p>
+&lt;h2 id="option-3-docsy-as-an-npm-package">Option 3: Docsy as an NPM package&lt;/h2>
+&lt;p>You can use Docsy as an NPM module as follows:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create your site and specify Docsy as the site theme:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>hugo new site myproject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> myproject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;theme = &amp;#34;docsy&amp;#34;&amp;#39;&lt;/span> &amp;gt;&amp;gt; config.toml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Install Docsy, and postCSS (as &lt;a href="#install-postcss">instructed earlier&lt;/a>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm install --save-dev google/docsy autoprefixer postcss-cli postcss
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Build or serve your new site using the usual Hugo commands, specifying the
+path to the Docsy theme files. For example, build your site as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-console" data-lang="console">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902">$&lt;/span> hugo --themesDir node_modules
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Start building sites …
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-style:italic">Total in 1890 ms
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can drop the &lt;code>--themesDir ...&lt;/code> flag by adding the themes directory to
+your site&amp;rsquo;s configuration file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;themesDir = &amp;#34;node_modules&amp;#34;&amp;#39;&lt;/span> &amp;gt;&amp;gt; config.toml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>As an alternative to specifying a &lt;code>themesDir&lt;/code>, on some platforms, you can
+instead create a symbolic link to the Docsy theme directory as follows (Linux
+commands shown, executed from the site root folder):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mkdir -p themes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">pushd&lt;/span> themes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ln -s ../node_modules/docsy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">popd&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="preview-your-site">Preview your site&lt;/h2>
+&lt;p>To preview your site locally:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> myproject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default, your site will be available at &lt;a href="http://localhost:1313">http://localhost:1313&lt;/a>.
+&lt;a href="/docs/get-started/known_issues/#macos">See the known issues on MacOS&lt;/a>.&lt;/p>
+&lt;p>You may get Hugo errors for missing parameters and values when you try to build
+your site. This is usually because you’re missing default values for some
+configuration settings that Docsy uses - once you add them your site should
+build correctly. You can find out how to add configuration in
+&lt;a href="/docs/get-started/basic-configuration/">Basic site configuration&lt;/a> - we
+recommend copying the example site configuration even if you’re creating a site
+from scratch as it provides defaults for many required configuration parameters.&lt;/p>
+&lt;h2 id="whats-next">What&amp;rsquo;s next?&lt;/h2>
+&lt;ul>
+&lt;li>Add some &lt;a href="/docs/get-started/basic-configuration/">basic site configuration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/adding-content/">Add content and customize your site&lt;/a>&lt;/li>
+&lt;li>Get some ideas from our
+&lt;a href="https://github.com/google/docsy-example">Example Site&lt;/a> and other
+&lt;a href="/docs/examples/">Examples&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="/docs/deployment/">Publish your site&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Deploy Docsy inside a Docker container</title><link>/docs/get-started/quickstart-docker/</link><pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate><guid>/docs/get-started/quickstart-docker/</guid><description>
+&lt;p>We provide a Docker image that you can use to run and test your Docsy site
+locally, without having to install all Docsy&amp;rsquo;s dependencies.&lt;/p>
+&lt;h2 id="install-the-prerequisites">Install the prerequisites&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>On Mac and Windows, download and install &lt;a href="https://www.docker.com/get-started">Docker
+Desktop&lt;/a>. On Linux, install &lt;a href="https://docs.docker.com/engine/install/#server">Docker
+engine&lt;/a> and &lt;a href="https://docs.docker.com/compose/install/">Docker
+compose&lt;/a>.&lt;/p>
+&lt;p>The installation may require you to reboot your computer for the changes to
+take effect.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/git-guides/install-git">Install git&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="create-your-repository-from-the-docsy-example-template">Create your repository from the docsy-example template&lt;/h2>
+&lt;p>The docsy-example repository provides a basic site structure that you can use
+as starting point to create your own documentation.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Use the &lt;a href="https://github.com/google/docsy-example">docsy-example template&lt;/a>
+to &lt;a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template">create your own repository&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Download the code to your local machine by &lt;a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">cloning your newly created
+repository&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Change your working directory to the newly created folder:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> docsy-example
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="build-and-run-the-container">Build and run the container&lt;/h2>
+&lt;p>The docsy-example repository includes a
+&lt;a href="https://docs.docker.com/engine/reference/builder/">Dockerfile&lt;/a> that you can
+use to run your site.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Build the docker image:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker-compose build
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Run the built image:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker-compose up
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Open the address &lt;code>http://localhost:1313&lt;/code> in your web browser to load the
+docsy-example homepage. You can now make changes to the source files, those
+changes will be live-reloaded in your browser.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="cleanup">Cleanup&lt;/h2>
+&lt;p>To cleanup your system and delete the container image follow the next steps.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Stop Docker Compose with &lt;strong>Ctrl + C&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Remove the produced images&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker-compose rm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="whats-next">What&amp;rsquo;s next?&lt;/h2>
+&lt;ul>
+&lt;li>Learn about &lt;a href="/docs/get-started/basic-configuration/">basic setup and configurations for Docsy&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="/docs/adding-content/">Add content and customize your site&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/deployment/">Publish your site&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Basic site configuration</title><link>/docs/get-started/basic-configuration/</link><pubDate>Wed, 08 Dec 2021 09:22:27 +0100</pubDate><guid>/docs/get-started/basic-configuration/</guid><description>
+&lt;p>Site-wide configuration details and parameters are defined in your project&amp;rsquo;s &lt;code>config.toml&lt;/code> file. These include your chosen Hugo theme (Docsy, of course!), project name, community links, Google Analytics configuration, and Markdown parser parameters. See the examples with comments in &lt;a href="https://github.com/google/docsy-example/blob/master/config.toml">&lt;code>config.toml&lt;/code> in the example project&lt;/a> for how to add this information. &lt;strong>We recommend copying this config.toml and editing it even if you’re just using the theme and not copying the entire Docsy example site&lt;/strong>, as it includes default values for many parameters that you need to set for your site to build correctly.&lt;/p>
+&lt;p>You may want to remove or customize some defaults of the copied &lt;code>config.toml&lt;/code> file straight away:&lt;/p>
+&lt;h2 id="internationalization">Internationalization&lt;/h2>
+&lt;p>The copied &lt;code>config.toml&lt;/code> file defines content in English, Norwegian and Farsi. You can find out more about how Docsy supports multi-language content in &lt;a href="/docs/language/">Multi-language support&lt;/a>.&lt;/p>
+&lt;p>If you don&amp;rsquo;t intend to translate your site, you can remove the language switcher by removing the following lines from &lt;code>config.toml&lt;/code>:&lt;/p>
+&lt;pre tabindex="0">&lt;code>[languages.no]
+title = &amp;#34;Docsy&amp;#34;
+description = &amp;#34;Docsy er operativsystem for skyen&amp;#34;
+languageName =&amp;#34;Norsk&amp;#34;
+contentDir = &amp;#34;content/no&amp;#34;
+time_format_default = &amp;#34;02.01.2006&amp;#34;
+time_format_blog = &amp;#34;02.01.2006&amp;#34;
+[languages.fa]
+title = &amp;#34;اسناد گلدی&amp;#34;
+description = &amp;#34;یک نمونه برای پوسته داکسی&amp;#34;
+languageName =&amp;#34;فارسی&amp;#34;
+contentDir = &amp;#34;content/fa&amp;#34;
+time_format_default = &amp;#34;2006.01.02&amp;#34;
+time_format_blog = &amp;#34;2006.01.02&amp;#34;
+&lt;/code>&lt;/pre>&lt;h2 id="search">Search&lt;/h2>
+&lt;p>By default, the Docsy example site uses its own &lt;a href="https://cse.google.com/cse/all">Google Custom Search Engine&lt;/a>. To disable this site search, delete or comment out the following lines:&lt;/p>
+&lt;pre tabindex="0">&lt;code># Google Custom Search Engine ID. Remove or comment out to disable search.
+gcs_engine_id = &amp;#34;011737558837375720776:fsdu1nryfng&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>To use your own Custom Search Engine, replace the value in the &lt;code>gcs_engine_id&lt;/code> with the ID of your own search engine. Or &lt;a href="/docs/adding-content/navigation/#site-search-options">choose another search option&lt;/a>.&lt;/p>
+&lt;h2 id="whats-next">What&amp;rsquo;s next?&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="/docs/adding-content/">Add content and customize your site&lt;/a>&lt;/li>
+&lt;li>Get some ideas from our &lt;a href="https://github.com/google/docsy-example">Example Site&lt;/a> and other &lt;a href="/docs/examples/">Examples&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="/docs/deployment/">Publish your site&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Known issues</title><link>/docs/get-started/known_issues/</link><pubDate>Wed, 08 Dec 2021 09:22:27 +0100</pubDate><guid>/docs/get-started/known_issues/</guid><description>
+&lt;p>The following issues are know on &lt;a href="#macos">MacOS&lt;/a> and on &lt;a href="#windows-subsystem-for-linux-wsl">Windows Subsystem for Linux&lt;/a>:&lt;/p>
+&lt;h3 id="macos">MacOS&lt;/h3>
+&lt;h4 id="errors-too-many-open-files-or-fatal-error-pipe-failed">Errors: &lt;code>too many open files&lt;/code> or &lt;code>fatal error: pipe failed&lt;/code>&lt;/h4>
+&lt;p>By default, MacOS permits a small number of open File Descriptors. For larger sites, or when you&amp;rsquo;re simultaneously running multiple applications,
+you might receive one of the following errors when you run &lt;a href="https://gohugo.io/commands/hugo_server/">&lt;code>hugo server&lt;/code>&lt;/a> to preview your site locally:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>POSTCSS v7 and earlier:&lt;/p>
+&lt;pre tabindex="0">&lt;code>ERROR 2020/04/14 12:37:16 Error: listen tcp 127.0.0.1:1313: socket: too many open files
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>POSTCSS v8 and later:&lt;/p>
+&lt;pre tabindex="0">&lt;code>fatal error: pipe failed
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;h5 id="workaround">Workaround&lt;/h5>
+&lt;p>To temporarily allow more open files:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>View your current settings by running:&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo launchctl limit maxfiles
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Increase the limit to &lt;code>65535&lt;/code> files by running the following commands. If your site has fewer files, you can set choose to set lower soft (&lt;code>65535&lt;/code>) and
+hard (&lt;code>200000&lt;/code>) limits.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo launchctl limit maxfiles &lt;span style="color:#0000cf;font-weight:bold">65535&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">200000&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">ulimit&lt;/span> -n &lt;span style="color:#0000cf;font-weight:bold">65535&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo sysctl -w kern.maxfiles&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">200000&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo sysctl -w kern.maxfilesperproc&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">65535&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Note that you might need to set these limits for each new shell.
+&lt;a href="https://www.google.com/search?q=mac+os+launchctl+limit+maxfiles+site%3Aapple.stackexchange.com&amp;amp;oq=mac+os+launchctl+limit+maxfiles+site%3Aapple.stackexchange.com">Learn more about these limits and how to make them permanent&lt;/a>.&lt;/p>
+&lt;h3 id="windows-subsystem-for-linux-wsl">Windows Subsystem for Linux (WSL)&lt;/h3>
+&lt;p>If you&amp;rsquo;re using WSL, ensure that you&amp;rsquo;re running &lt;code>hugo&lt;/code> on a Linux mount of the filesystem, rather than a Windows one, otherwise you may get unexpected errors.&lt;/p></description></item></channel></rss>

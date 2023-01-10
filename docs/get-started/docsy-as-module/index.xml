@@ -1,0 +1,343 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Use Docsy as a Hugo Module</title><link>/docs/get-started/docsy-as-module/</link><description>Recent content in Use Docsy as a Hugo Module on Goldydocs</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 08 Dec 2021 10:33:16 +0100</lastBuildDate><atom:link href="/docs/get-started/docsy-as-module/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Before you begin</title><link>/docs/get-started/docsy-as-module/installation-prerequisites/</link><pubDate>Wed, 08 Dec 2021 11:12:59 +0100</pubDate><guid>/docs/get-started/docsy-as-module/installation-prerequisites/</guid><description>
+&lt;p>This page describes the prerequisites for building a site that uses Docsy as a Hugo Module.&lt;/p>
+&lt;h2 id="install-hugo">Install Hugo&lt;/h2>
+&lt;p>You need a &lt;a href="https://github.com/gohugoio/hugo/releases">recent &lt;strong>extended&lt;/strong> version&lt;/a> (we recommend version 0.73.0 or later) of &lt;a href="https://gohugo.io/">Hugo&lt;/a> to do local builds and previews of sites (like this one) that use Docsy. If you install from the release page, make sure to get the &lt;code>extended&lt;/code> Hugo version, which supports &lt;a href="https://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html">SCSS&lt;/a>; you may need to scroll down the list of releases to see it.&lt;/p>
+&lt;p>For comprehensive Hugo documentation, see &lt;a href="https://gohugo.io/">gohugo.io&lt;/a>.&lt;/p>
+&lt;h3 id="on-linux">On Linux&lt;/h3>
+&lt;p>Be careful using &lt;code>sudo apt-get install hugo&lt;/code>, as it &lt;a href="https://gohugo.io/getting-started/installing/#debian-and-ubuntu">doesn&amp;rsquo;t get you the &lt;code>extended&lt;/code> version for all Debian/Ubuntu versions&lt;/a>, and may not be up-to-date with the most recent Hugo version.&lt;/p>
+&lt;p>If you&amp;rsquo;ve already installed Hugo, check your version:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the result is &lt;code>v0.73&lt;/code> or earlier, or if you don&amp;rsquo;t see &lt;code>Extended&lt;/code>, you&amp;rsquo;ll need to install the latest version. You can see a complete list of Linux installation options in &lt;a href="https://gohugo.io/getting-started/installing/#linux">Install Hugo&lt;/a>. The following shows you how to install Hugo from the release page:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to the &lt;a href="https://github.com/gohugoio/hugo/releases">Hugo releases&lt;/a> page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the most recent release, scroll down until you find a list of
+&lt;strong>Extended&lt;/strong> versions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Download the latest extended version (&lt;code>hugo_extended_0.1XX_Linux-64bit.tar.gz&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create a new directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Extract the files you downloaded to &lt;code>hugo&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Switch to your new directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Install Hugo:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo install hugo /usr/bin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="on-macos">On macOS&lt;/h3>
+&lt;p>Install Hugo using &lt;a href="https://gohugo.io/getting-started/installing/#homebrew-macos">Brew&lt;/a>.&lt;/p>
+&lt;h3 id="as-an-npm-module">As an &lt;code>npm&lt;/code> module&lt;/h3>
+&lt;p>You can install Hugo as an &lt;code>npm&lt;/code> module using &lt;a href="https://www.npmjs.com/package/hugo-bin">&lt;code>hugo-bin&lt;/code>&lt;/a>. This adds &lt;code>hugo-bin&lt;/code> to your &lt;code>node_modules&lt;/code> folder and adds the dependency to your &lt;code>package.json&lt;/code> file. To install the extended version of Hugo:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install hugo-extended --save-dev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See the &lt;a href="https://www.npmjs.com/package/hugo-bin">&lt;code>hugo-bin&lt;/code> documentation&lt;/a> for usage details.&lt;/p>
+&lt;h2 id="install-go-language">Install Go language&lt;/h2>
+&lt;p>Hugo&amp;rsquo;s commands for module management require that the Go programming language is installed on your system. Check whether &lt;code>go&lt;/code> is already installed:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ go version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>go version go1.19.2 windows/amd64
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ensure that you are using version 1.12 or higher.&lt;/p>
+&lt;p>If the &lt;code>go&lt;/code> language is not installed on your system yet or if you need to upgrade, go to the &lt;a href="https://go.dev/dl/">download area&lt;/a> of the Go website, choose the installer for your system architecture and execute it. Afterwards, check for a successful installation.&lt;/p>
+&lt;h2 id="install-git-vcs-client">Install Git VCS client&lt;/h2>
+&lt;p>Hugo&amp;rsquo;s commands for module management require that the &lt;code>git&lt;/code> client is installed on your system. Check whether &lt;code>git&lt;/code> is already present in your system:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git version 2.38.1.windows.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If no &lt;code>git&lt;/code> client is installed on your system yet, go to the &lt;a href="https://git-scm.com/">Git website&lt;/a>, download the installer for your system architecture and execute it. Afterwards, check for a successful installation.&lt;/p>
+&lt;h2 id="install-postcss">Install PostCSS&lt;/h2>
+&lt;p>To build or update your site&amp;rsquo;s CSS resources, you also need &lt;a href="https://postcss.org/">&lt;code>PostCSS&lt;/code>&lt;/a> to create the final assets. If you need to install it, you must have a recent version of &lt;a href="https://nodejs.org/en/">NodeJS&lt;/a> installed on your machine so you can use &lt;code>npm&lt;/code>, the Node package manager. By default &lt;code>npm&lt;/code> installs tools under the directory where you run &lt;a href="https://docs.npmjs.com/cli/v6/commands/npm-install#description">&lt;code>npm install&lt;/code>&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install -D autoprefixer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install -D postcss-cli
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Starting in &lt;a href="https://github.com/postcss/postcss-cli/blob/master/CHANGELOG.md">version 8 of &lt;code>postcss-cli&lt;/code>&lt;/a>, you must also separately install &lt;code>postcss&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install -D postcss
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note that versions of &lt;code>PostCSS&lt;/code> later than 5.0.1 will not load &lt;code>autoprefixer&lt;/code> if installed &lt;a href="https://flaviocopes.com/npm-packages-local-global/">globally&lt;/a>, you must use a local install.&lt;/p>
+&lt;h2 id="installupgrade-nodejs">Install/Upgrade Node.js&lt;/h2>
+&lt;p>To ensure you can properly build your site beyond executing &lt;code>hugo server&lt;/code>, you must have the &lt;a href="https://nodejs.org/en/about/releases/">latest long term support (LTS) Version&lt;/a> of Node.js. If you do not have the latest LTS version, you may see the one of following errors:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Error: Error building site: POSTCSS: failed to transform &amp;#34;scss/main.css&amp;#34; (text/css): Unexpected identifier
+#OR
+/home/user/repos/my-new-site/themes/docsy/node_modules/hugo-extended/postinstall.js:1
+import install from &amp;#34;./lib/install.js&amp;#34;;
+^^^^^^^
+SyntaxError: Unexpected identifier
+at Module._compile (internal/modules/cjs/loader.js:723:23)
+at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+at Module.load (internal/modules/cjs/loader.js:653:32)
+at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+at startup (internal/bootstrap/node.js:283:19)
+at bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)
+&lt;/code>&lt;/pre>&lt;p>You can check your current Node.js version by running &lt;code>node -v&lt;/code>. If you need to install a new version, see the following instructions:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions">Debian and Ubuntu based distributions&lt;/a>&lt;/p>
+&lt;p>tl;dr:&lt;/p>
+&lt;pre tabindex="0">&lt;code># Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Using Debian, as root
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+apt-get install -y nodejs
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions-1">Enterprise Linux based distributions&lt;/a>&lt;/p>
+&lt;p>tl;dr:&lt;/p>
+&lt;pre tabindex="0">&lt;code># As root
+curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;h2 id="whats-next">What&amp;rsquo;s next?&lt;/h2>
+&lt;p>With all prerequisites installed, choose how to start off with your new Hugo site&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="/docs/get-started/docsy-as-module/example-site-as-template/">Start with a prepopulated site (for beginners)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/get-started/docsy-as-module/start-from-scratch/">Start site from scratch (for experts)&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Create a new site: start with a prepopulated site</title><link>/docs/get-started/docsy-as-module/example-site-as-template/</link><pubDate>Wed, 08 Dec 2021 09:21:54 +0100</pubDate><guid>/docs/get-started/docsy-as-module/example-site-as-template/</guid><description>
+&lt;p>The simplest way to create a new Docsy site is to use the source of the &lt;a href="https://github.com/google/docsy-example">Docsy example site&lt;/a> as starting point. This approach gives you a skeleton structure for your site, with top-level and documentation sections and templates that you can modify as necessary. The example site automatically pulls in the Docsy theme as a &lt;a href="https://gohugo.io/hugo-modules/">Hugo Module&lt;/a>, so it&amp;rsquo;s easy to &lt;a href="/docs/updating/updating-hugo-module/">keep up to date&lt;/a>.&lt;/p>
+&lt;p>If you prefer to create a site from scratch, follow the instructions in Start a site from scratch.&lt;/p>
+&lt;h2 id="tldr-setup-for-the-impatient-expert">TL;DR: Setup for the impatient expert&lt;/h2>
+&lt;p>At your Unix shell or Windows command line, run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/google/docsy-example.git my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You now can preview your new site in your browser at &lt;a href="http://localhost:1313/">http://localhost:1313&lt;/a>.&lt;/p>
+&lt;h2 id="detailed-setup-instructions">Detailed Setup instructions&lt;/h2>
+&lt;h3 id="clone-the-docsy-example-site">Clone the Docsy example site&lt;/h3>
+&lt;p>The &lt;a href="https://example.docsy.dev">Example Site&lt;/a> gives you a good starting point for building your docs site and is
+pre-configured to automatically pull in the Docsy theme as a Hugo Module.
+There are two different routes to get a local clone of the example site:&lt;/p>
+&lt;ul>
+&lt;li>If you want to create a local copy only, choose option 1.&lt;/li>
+&lt;li>If you have a GitHub account and want to create a GitHub repo for your site go for option 2.&lt;/li>
+&lt;/ul>
+&lt;h4 id="option-1-using-the-command-line-local-copy-only">Option 1: Using the command line (local copy only)&lt;/h4>
+&lt;p>If you want to use a remote repository other than GitHub (such as &lt;a href="https://gitlab.com">GitLab&lt;/a>, &lt;a href="https://bitbucket.org/">BitBucket&lt;/a>, &lt;a href="https://aws.amazon.com/codecommit/">AWS CodeCommit&lt;/a>, &lt;a href="https://gitea.io/">Gitea&lt;/a>) or if you don&amp;rsquo;t want a remote repo at all, simply make a local working copy of the example site directly using &lt;code>git clone&lt;/code>. As last parameter, give your chosen local repo name (here: &lt;code>my-new-site&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/google/docsy-example.git my-new-site
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="option-2-using-the-github-ui-local-copy--associated-github-repo">Option 2: Using the GitHub UI (local copy + associated GitHub repo)&lt;/h4>
+&lt;p>As the Docsy example site repo is a &lt;a href="https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/">template repository&lt;/a>, creating your own remote GitHub clone of this Docsy example site repo is quite easy:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Go to the &lt;a href="https://github.com/google/docsy-example">Docsy example site repo&lt;/a> and click &lt;strong>Use this template&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Chose a name for your new repository (e.g. &lt;code>my-new-site&lt;/code>) and type it in the &lt;strong>Repository name&lt;/strong> field. You can also add an optional &lt;strong>Description&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create repository from template&lt;/strong> to create your new repository. Congratulations, you just created your remote Github clone which now serves as starting point for your own site!&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make a local copy of your newly created GitHub repository by using &lt;code>git clone&lt;/code>, giving your repo&amp;rsquo;s web URL as last parameter.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/me-at-github/my-new-site.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+Depending on your environment you may need to tweak the &lt;a href="https://github.com/google/docsy-example/blob/1c7f7e300c90cd690ca5be66b43fe58713bb21c9/config.toml#L221-L228">module top level settings&lt;/a> inside your &lt;code>config.toml&lt;/code> slightly, for example by adding a proxy to use when downloading remote modules.
+You can find details of what these configuration settings do in the &lt;a href="https://gohugo.io/hugo-modules/configuration/#module-config-top-level">Hugo modules documentation&lt;/a>.
+&lt;/div>
+&lt;p>Now you can make local edits and test your copied site locally with Hugo.&lt;/p>
+&lt;h3 id="preview-your-site">Preview your site&lt;/h3>
+&lt;p>To build and preview your site locally, switch to the root of your cloned project and use hugo&amp;rsquo;s &lt;code>server&lt;/code> command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Preview your site in your browser at: &lt;a href="http://localhost:1313/">http://localhost:1313&lt;/a>.
+Thanks to Hugo&amp;rsquo;s live preview, you can immediately see the effect of changes that you are making to the source files of your local repo.
+Use &lt;code>Ctrl + c&lt;/code> to stop the Hugo server whenever you like.
+&lt;a href="/docs/get-started/known_issues/#macos">See the known issues on MacOS&lt;/a>.&lt;/p>
+&lt;h2 id="whats-next">What&amp;rsquo;s next?&lt;/h2>
+&lt;ul>
+&lt;li>Add some &lt;a href="/docs/get-started/basic-configuration/">basic configuration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/adding-content/">Edit existing content and add more pages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/adding-content/lookandfeel/">Customize your site&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/deployment/">Publish your site&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Create a new site: Start a new site from scratch</title><link>/docs/get-started/docsy-as-module/start-from-scratch/</link><pubDate>Wed, 08 Dec 2021 09:21:54 +0100</pubDate><guid>/docs/get-started/docsy-as-module/start-from-scratch/</guid><description>
+&lt;p>The simplest approach to creating a Docsy site is &lt;a href="/docs/get-started/docsy-as-module/example-site-as-template/">copying our example site&lt;/a>. However, if you&amp;rsquo;re an experienced Hugo user or the site structure of our example site doesn&amp;rsquo;t meet your needs, you may prefer to create a new site from scratch. With this option, you&amp;rsquo;ll get Docsy look and feel, navigation, and other features, but you&amp;rsquo;ll need to specify your own site structure.&lt;/p>
+&lt;p>These instructions give you a minimum file structure for your site project only, so that you build and extend your actual site step by step. The first step is adding the Docsy theme as a &lt;a href="https://gohugo.io/hugo-modules/">Hugo Module&lt;/a> to your site. If needed, you can easily &lt;a href="/docs/updating/">update&lt;/a> the module to the latest revision from the Docsy GitHub repo.&lt;/p>
+&lt;h2 id="tldr-setup-for-the-impatient-expert">TL;DR: Setup for the impatient expert&lt;/h2>
+&lt;p>At your command prompt, run the following:&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+CLI:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active persistLang-Bash"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+onclick="persistLang(&amp;#34;Bash&amp;#34;);"aria-controls="tabs-00-01" aria-selected="false">
+Unix shell
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link persistLang-Batchfile"
+id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
+onclick="persistLang(&amp;#34;Batchfile&amp;#34;);"aria-controls="tabs-00-02" aria-selected="false">
+Windows command line
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div class="tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Bash" data-lang="Bash">&lt;span style="display:flex;">&lt;span>hugo new site my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo mod init github.com/me/my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo mod get github.com/google/docsy@v0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat &amp;gt;&amp;gt; config.toml &lt;span style="color:#4e9a06">&amp;lt;&amp;lt;EOL
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">[module]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">proxy = &amp;#34;direct&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">[[module.imports]]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">path = &amp;#34;github.com/google/docsy&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">[[module.imports]]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">path = &amp;#34;github.com/google/docsy/dependencies&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">EOL&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo server&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Batchfile" data-lang="Batchfile">&lt;span style="display:flex;">&lt;span>hugo new site my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">cd&lt;/span> my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo mod init github.com/me/my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo mod get github.com/google/docsy@v0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">echo&lt;/span> [module]&lt;span style="color:#4e9a06">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span>proxy = &lt;span style="color:#4e9a06">&amp;#34;direct&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span>[[module.imports]]&lt;span style="color:#4e9a06">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span>path = &lt;span style="color:#4e9a06">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span>[[module.imports]]&lt;span style="color:#4e9a06">^
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">&lt;/span>path = &lt;span style="color:#4e9a06">&amp;#34;github.com/google/docsy/dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&amp;gt;&amp;gt;&lt;/span>config.toml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hugo server&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>You now can preview your new site inside your browser at &lt;a href="http://localhost:1313/">http://localhost:1313&lt;/a>.&lt;/p>
+&lt;h2 id="detailed-setup-instructions">Detailed Setup instructions&lt;/h2>
+&lt;p>Specifying the &lt;a href="https://github.com/google/docsy">Docsy theme&lt;/a> as Hugo Module for your minimal site gives you all the theme-y goodness, but you&amp;rsquo;ll need to specify your own site structure.&lt;/p>
+&lt;h3 id="create-your-new-skeleton-project">Create your new skeleton project&lt;/h3>
+&lt;p>To create a new Hugo site project and then add the Docs theme as a submodule, run the following commands from your project&amp;rsquo;s root directory.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo new site my-new-site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> my-new-site
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will create a minimal site structure, containing the folders &lt;code>archetypes&lt;/code>, &lt;code>content&lt;/code>, &lt;code>data&lt;/code>, &lt;code>layouts&lt;/code>, &lt;code>static&lt;/code>, and &lt;code>themes&lt;/code> and a configuration file, `config.toml.&lt;/p>
+&lt;h3 id="import-the-docsy-theme-module-as-a-dependency-of-your-site">Import the Docsy theme module as a dependency of your site&lt;/h3>
+&lt;p>Only sites that are Hugo Modules themselves can import other modules. To turn your site into a Hugo Module, run the following commands in your newly created site directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo mod init github.com/me/my-new-site
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates two new files, &lt;code>go.mod&lt;/code> for the module definitions and &lt;code>go.sum&lt;/code> which holds the checksums for module verification.&lt;/p>
+&lt;p>Next declare the Docsy theme module as a dependency for your site.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo mod get github.com/google/docsy@v0.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command adds the &lt;code>docsy&lt;/code> theme module to your definition file &lt;code>go.mod&lt;/code>.&lt;/p>
+&lt;h3 id="add-theme-module-configuration-settings">Add theme module configuration settings&lt;/h3>
+&lt;p>Add the settings in the following snippet at the end of your site configuration file (default: &lt;code>config.toml&lt;/code>) and save the file.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-02-00-tab" data-toggle="tab" href="#tabs-02-00" role="tab"
+aria-controls="tabs-02-00" aria-selected="false">
+Configuration file:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active persistLang-toml"
+id="tabs-02-01-tab" data-toggle="tab" href="#tabs-02-01" role="tab"
+onclick="persistLang(&amp;#34;toml&amp;#34;);"aria-controls="tabs-02-01" aria-selected="false">
+config.toml
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link persistLang-yaml"
+id="tabs-02-02-tab" data-toggle="tab" href="#tabs-02-02" role="tab"
+onclick="persistLang(&amp;#34;yaml&amp;#34;);"aria-controls="tabs-02-02" aria-selected="false">
+config.yaml
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link persistLang-json"
+id="tabs-02-03-tab" data-toggle="tab" href="#tabs-02-03" role="tab"
+onclick="persistLang(&amp;#34;json&amp;#34;);"aria-controls="tabs-02-03" aria-selected="false">
+config.json
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-2-content">
+&lt;div class="tab-pane fade"
+id="tabs-02-00" role="tabpanel" aria-labelled-by="tabs-02-00-tab">
+&lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div class="tab-pane fade show active"
+id="tabs-02-01" role="tabpanel" aria-labelled-by="tabs-02-01-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">module&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">proxy&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;direct&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># uncomment line below for temporary local development of module&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># replacements = &amp;#34;github.com/google/docsy -&amp;gt; ../../docsy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">module&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">hugoVersion&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">extended&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">min&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;0.73.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">[[&lt;/span>&lt;span style="color:#000">module&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">imports&lt;/span>&lt;span style="color:#000;font-weight:bold">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">path&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">disable&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">[[&lt;/span>&lt;span style="color:#000">module&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">imports&lt;/span>&lt;span style="color:#000;font-weight:bold">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">path&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;github.com/google/docsy/dependencies&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">disable&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-02-02" role="tabpanel" aria-labelled-by="tabs-02-02-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">module&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">proxy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">direct&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">hugoVersion&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">extended&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">min&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.73.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">imports&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">github.com/google/docsy&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">disable&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">github.com/google/docsy/dependencies&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">disable&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-pane fade"
+id="tabs-02-03" role="tabpanel" aria-labelled-by="tabs-02-03-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;module&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;proxy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;direct&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;hugoVersion&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;extended&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;min&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;0.73.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;imports&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;path&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;github.com/google/docsy&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;disable&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;path&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;github.com/google/docsy/dependencies&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;disable&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#204a87;font-weight:bold">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>You can find details of what these configuration settings do in the &lt;a href="https://gohugo.io/hugo-modules/configuration/#module-config-top-level">Hugo modules documentation&lt;/a>.
+Depending on your environment you may need to tweak them slightly, for example by adding a proxy to use when downloading remote modules.&lt;/p>
+&lt;h3 id="preview-your-site">Preview your site&lt;/h3>
+&lt;p>To build and preview your site locally:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default, your site will be available at &lt;a href="http://localhost:1313/">http://localhost:1313&lt;/a>. When encountering problems, have a look at the &lt;a href="/docs/get-started/known_issues/#macos">known issues&lt;/a> on MacOS.&lt;/p>
+&lt;p>You may get Hugo errors for missing parameters and values when you try to build your site. This is usually because you&amp;rsquo;re missing default values for some configuration settings that Docsy uses - once you add them your site should build correctly. You can find out how to add configuration in &lt;a href="/docs/get-started/basic-configuration/">Basic site configuration&lt;/a> - we recommend copying the example site configuration even if you&amp;rsquo;re creating a site from scratch as it provides defaults for many required configuration parameters.&lt;/p>
+&lt;h2 id="whats-next">What&amp;rsquo;s next?&lt;/h2>
+&lt;ul>
+&lt;li>Add some &lt;a href="/docs/get-started/basic-configuration/">basic configuration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="/docs/adding-content/">Add content and customize your site&lt;/a>&lt;/li>
+&lt;li>Get some ideas from our &lt;a href="https://github.com/google/docsy-example">Example Site&lt;/a> and other &lt;a href="/docs/examples/">Examples&lt;/a>.&lt;/li>
+&lt;li>&lt;a href="/docs/deployment/">Publish your site&lt;/a>.&lt;/li>
+&lt;/ul></description></item></channel></rss>
