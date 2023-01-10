@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Homeassi</title><link>/docs/homeassi/</link><description>Recent content in Homeassi on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/homeassi/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Homeassi Documentation</title><link>/docs/homeassi/homeassi-documentation/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>/docs/homeassi/homeassi-documentation/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Homeassi</title><link>https://k4cg.github.io/homeassi/docs/homeassi/</link><description>Recent content in Homeassi on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://k4cg.github.io/homeassi/docs/homeassi/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Homeassi Documentation</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-documentation/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-documentation/</guid><description>
 &lt;h2 id="grundlegendes">Grundlegendes&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -797,7 +797,7 @@
 &lt;li>In den Addon Einstellungen Public Key(s) hinterlegen, Port konfigurieren&lt;/li>
 &lt;li>Verbindung mit &lt;code>ssh -i ~/path/to/private_key -p &amp;lt;port&amp;gt; root@&amp;lt;home_assi_ip&amp;gt;&lt;/code>&lt;/li>
 &lt;li>HA CLI: &lt;a href="https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line">https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Deployment mit Gitlab Pages</title><link>/docs/homeassi/deploy-with-gitlab-pages/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>/docs/homeassi/deploy-with-gitlab-pages/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Deployment mit Gitlab Pages</title><link>https://k4cg.github.io/homeassi/docs/homeassi/deploy-with-gitlab-pages/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/deploy-with-gitlab-pages/</guid><description>
 &lt;ul>
 &lt;li>Branch &lt;code>gh-pages&lt;/code> anlegen (&lt;a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&lt;/a>)&lt;/li>
 &lt;li>Github Workflow &lt;code>.github/workflows/gh-pages.yml&lt;/code> anlegen (&lt;a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a>)&lt;/li>
@@ -805,7 +805,7 @@
 &lt;li>&lt;code>npm install&lt;/code> ausfuehren, um &lt;code>package-lock.json&lt;/code> zu erzeugen&lt;/li>
 &lt;li>&lt;code>.gitignore&lt;/code> anpassen (&lt;code>package-lock.json&lt;/code> entfernen)&lt;/li>
 &lt;li>baseURL = &amp;ldquo;&lt;a href="https://k4cg.github.io/homeassi%22">https://k4cg.github.io/homeassi&amp;quot;&lt;/a> in &lt;code>config.toml&lt;/code> eintragen&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Homeassi Todos</title><link>/docs/homeassi/homeassi-todos/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>/docs/homeassi/homeassi-todos/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Homeassi Todos</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</guid><description>
 &lt;h2 id="doku">Doku&lt;/h2>
 &lt;ul>
 &lt;li>Evtl. Issues fuer die einzelnen Punkte erstellen&lt;/li>

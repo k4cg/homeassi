@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Update Docsy</title><link>/docs/updating/</link><description>Recent content in Update Docsy on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/updating/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Update your Docsy Hugo Module</title><link>/docs/updating/updating-hugo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/updating/updating-hugo-module/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Update Docsy</title><link>https://k4cg.github.io/homeassi/docs/updating/</link><description>Recent content in Update Docsy on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://k4cg.github.io/homeassi/docs/updating/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Update your Docsy Hugo Module</title><link>https://k4cg.github.io/homeassi/docs/updating/updating-hugo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://k4cg.github.io/homeassi/docs/updating/updating-hugo-module/</guid><description>
 &lt;p>When using the Docsy theme as a Hugo Module, updating your theme is really easy.&lt;/p>
 &lt;p>At the command prompt, change to the root directory of your existing site.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /path/to/my-existing-site
@@ -15,14 +15,14 @@ theme, for example:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Instead of a version tag, you can also specify a commit hash, for example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>hugo mod get -u github.com/google/docsy@6c8a3afe
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div></description></item><item><title>Docs: Update Docsy without Hugo Modules</title><link>/docs/updating/updating-submodules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/updating/updating-submodules/</guid><description>
+&lt;/div></description></item><item><title>Docs: Update Docsy without Hugo Modules</title><link>https://k4cg.github.io/homeassi/docs/updating/updating-submodules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://k4cg.github.io/homeassi/docs/updating/updating-submodules/</guid><description>
 &lt;p>If you aren&amp;rsquo;t using Hugo Modules, depending on how you chose to install Docsy on your existing site, use one of the following two procedures to update your theme.&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
-If you intend to update your site, consider &lt;a href="/docs/updating/convert-site-to-module/">converting your site to Hugo Modules&lt;/a>. After conversion, it&amp;rsquo;s even simpler to update Docsy!
+If you intend to update your site, consider &lt;a href="https://k4cg.github.io/homeassi/docs/updating/convert-site-to-module/">converting your site to Hugo Modules&lt;/a>. After conversion, it&amp;rsquo;s even simpler to update Docsy!
 &lt;/div>
 &lt;h2 id="update-your-docsy-submodule">Update your Docsy submodule&lt;/h2>
-&lt;p>If you are using the &lt;a href="/docs/get-started/other-options/#option-1-docsy-as-a-git-submodule">Docsy theme as a submodule&lt;/a> in your project, here&amp;rsquo;s how you update the submodule:&lt;/p>
+&lt;p>If you are using the &lt;a href="https://k4cg.github.io/homeassi/docs/get-started/other-options/#option-1-docsy-as-a-git-submodule">Docsy theme as a submodule&lt;/a> in your project, here&amp;rsquo;s how you update the submodule:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Navigate to the root of your local project, then run:&lt;/p>
@@ -39,7 +39,7 @@ If you intend to update your site, consider &lt;a href="/docs/updating/convert-s
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ol>
 &lt;h2 id="route-2-update-your-docsy-clone">Route 2: Update your Docsy clone&lt;/h2>
-&lt;p>If you &lt;a href="/docs/get-started/other-options/#option-2-clone-the-docsy-theme">cloned the Docsy theme&lt;/a> into
+&lt;p>If you &lt;a href="https://k4cg.github.io/homeassi/docs/get-started/other-options/#option-2-clone-the-docsy-theme">cloned the Docsy theme&lt;/a> into
 the &lt;code>themes&lt;/code> folder in your project, then you use the &lt;code>git pull&lt;/code> command:&lt;/p>
 &lt;ol>
 &lt;li>
@@ -55,7 +55,7 @@ the &lt;code>themes&lt;/code> folder in your project, then you use the &lt;code>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git pull origin master
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ol>
-&lt;p>If you have made any local changes to the cloned theme, &lt;strong>you must manually resolve any merge conflicts&lt;/strong>.&lt;/p></description></item><item><title>Docs: Migrate to Hugo Modules</title><link>/docs/updating/convert-site-to-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/updating/convert-site-to-module/</guid><description>
+&lt;p>If you have made any local changes to the cloned theme, &lt;strong>you must manually resolve any merge conflicts&lt;/strong>.&lt;/p></description></item><item><title>Docs: Migrate to Hugo Modules</title><link>https://k4cg.github.io/homeassi/docs/updating/convert-site-to-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://k4cg.github.io/homeassi/docs/updating/convert-site-to-module/</guid><description>
 &lt;h2 id="tldr-conversion-for-the-impatient-expert">TL;DR: Conversion for the impatient expert&lt;/h2>
 &lt;p>Run the following from the command line:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
