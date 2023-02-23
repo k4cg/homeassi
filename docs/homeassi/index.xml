@@ -809,36 +809,131 @@
 &lt;h2 id="doku">Doku&lt;/h2>
 &lt;ul>
 &lt;li>Evtl. Issues fuer die einzelnen Punkte erstellen&lt;/li>
-&lt;li>Diese Seite als Grundlage fuer die Doku nehmen: &lt;a href="https://docsy.dev/docs/">Docsy User Guide&lt;/a> (Repo: &lt;a href="https://github.com/google/docsy/tree/master/userguide">Docsy theme repo&lt;/a>)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Diese Seite als Grundlage fuer die Doku nehmen: &lt;a href="https://docsy.dev/docs/">Docsy User Guide&lt;/a> (&lt;a href="https://github.com/google/docsy/tree/master/userguide">Repo&lt;/a>)&lt;/li>
 &lt;li>Installation und Verwendung Docsy/Hugo dokumentieren&lt;/li>
-&lt;li>Publishen mit Github Actions&lt;/li>
+&lt;li>Publishen mit Github Actions (&lt;a href="https://k4cg.github.io/homeassi/">https://k4cg.github.io/homeassi/&lt;/a>)&lt;/li>
+&lt;li>Ueberfluessiges Zeug rausnehmen&lt;/li>
 &lt;li>About Sektion schreiben (&amp;ldquo;Everything IoT. Homeassistant, MQTT, sensors, status, InfluxDB, Grafana, etc.&amp;rdquo;)&lt;/li>
 &lt;li>Blogpost(s) schreiben (was soll das alles, wozu gibt es diese Seite, Ist-Zustand, Plan, Progress Reports)&lt;/li>
-&lt;li>Doku vervollstaendigen (Grafana Dashboard erstellen, InfluxDB Aufbau und zugriff, wie baut man ein neues Getränk ein, wie baut man einen neuen (MQTT) Sensor ein)&lt;/li>
+&lt;li>Doku vervollstaendigen (Grafana Dashboard erstellen, InfluxDB Aufbau und Zugriff, wie baut man ein neues Getränk ein, wie baut man einen neuen (MQTT) Sensor ein)&lt;/li>
 &lt;li>Dashboards dokumentieren&lt;/li>
 &lt;li>Diagramm malen
 &lt;ul>
 &lt;li>Zeug in der K4:
 &lt;ul>
-&lt;li>Sensoren&lt;/li>
-&lt;li>wifi2mqtt&lt;/li>
-&lt;li>mqtt2spacestatus&lt;/li>
-&lt;li>Dinge auf mqtt Server, die hier noch nicht aufgelistet sind&lt;/li>
-&lt;li>Apache mit status.json&lt;/li>
-&lt;li>k4cgrouter mit Port Forwarding&lt;/li>
-&lt;li>Space API?&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Sensoren:
+&lt;ul>
+&lt;li>CO2 (CO2/Temp)&lt;/li>
+&lt;li>Matomat&lt;/li>
+&lt;li>Door (+Temp/Humidity/Pressure)&lt;/li>
+&lt;li>Tennis (Sound/Light/Temp)&lt;/li>
+&lt;li>Hosts&lt;/li>
+&lt;li>Octopi&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Zeug auf rumpl:
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://k4cg.org/index.php/Projekt:wifi2mqtt">wifi2mqtt&lt;/a>
 &lt;ul>
-&lt;li>Grafana&lt;/li>
-&lt;li>InfluxDB&lt;/li>
-&lt;li>sensor-fetcher&lt;/li>
-&lt;li>Telegraf? Apache Metrics?&lt;/li>
-&lt;li>Zusätzliche Metriken (Wetter?)&lt;/li>
-&lt;li>Dinge auf rumpl, die hier noch nicht aufgelistet sind&lt;/li>
-&lt;li>Wie kommen die Daten ueberhaupt in die InfluxDB auf der rumpl? Scheinbar mit diesem Skript: &lt;code>/usr/local/sensor-fetcher/fetch.py&lt;/code>. Das fragt die &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">status.json&lt;/a> ab und schreibt die Werte in die InfluxDB &lt;code>sensors&lt;/code>&lt;/li>
-&lt;li>Graphs haben teilweise &lt;code>InfluxDB-wip&lt;/code> als Data source (InfluxDB Datenbank &lt;code>wip&lt;/code>). Auf &lt;code>mqtt.intern.k4cg.org&lt;/code> laeuft ein telegraf, der hat einen Output, bei dem die InfluxDB Datenbank &lt;code>wip&lt;/code> konfiguriert ist. Der Input ist per MQTT (&lt;code>sensors/#&lt;/code>).&lt;/li>
+&lt;li>/usr/local/wifi2mqtt auf &lt;code>mqtt.intern.k4cg.org&lt;/code>&lt;/li>
+&lt;li>Wifi Geraete vom &lt;a href="https://k4cg.org/index.php/Host:router.intern.k4cg.org">router&lt;/a> =&amp;gt; &lt;code>sensors/wifi/online&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://k4cg.org/index.php/Host:mqtt.intern.k4cg.org#MQTT2Spacestatus">mqtt2spacestatus&lt;/a>
+&lt;ul>
+&lt;li>/usr/local/spacestatus/mqtt2spacestatus.py auf &lt;code>mqtt.intern.k4cg.org&lt;/code>&lt;/li>
+&lt;li>Temp, Matomat, Sound, Light, Humidity, Hosts, Door, Octopi (&lt;code>sensors/#&lt;/code>) =&amp;gt; &lt;code>/var/www/spacestatus/status.json&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://k4cg.org/index.php/Host:mqtt.intern.k4cg.org#Apache">Apache mit status.json&lt;/a>
+&lt;ul>
+&lt;li>stellt &lt;code>status.json&lt;/code> unter &lt;a href="http://192.168.5.20/status.json">http://192.168.5.20/status.json&lt;/a> zur Verfuegung&lt;/li>
+&lt;li>von ausserhalb erreichbar unter &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a> (Portweiterleitung im &lt;a href="https://k4cg.org/index.php/Host:router.intern.k4cg.org">router&lt;/a>)&lt;/li>
+&lt;li>Am Ende erreichbar unter &lt;a href="https://status.k4cg.org/status.json">https://status.k4cg.org/status.json&lt;/a> (zeigt auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a>, &lt;code>httpd&lt;/code> dort macht &lt;code>ProxyPass &amp;quot;/status.json&amp;quot; &amp;quot;http://k4cgrouter.duckdns.org:59468/status.json&amp;quot;&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://spaceapi.k4cg.org/">Space API&lt;/a>
+&lt;ul>
+&lt;li>laeuft auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a>&lt;/li>
+&lt;li>&lt;code>update.py&lt;/code> in &lt;code>/var/www/spaceapi.k4cg.org/&lt;/code> erstellt aus dem &lt;a href="https://status.k4cg.org/status.json">status&lt;/a> die Datei &lt;code>spaceapi.json&lt;/code>&lt;/li>
+&lt;li>&lt;code>DirectoryIndex spaceapi.json&lt;/code> in der &lt;code>httpd&lt;/code> Konfig&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="http://k4cgrouter.duckdns.org">k4cgrouter&lt;/a> mit &lt;a href="https://router.intern.k4cg.org/cgi-bin/luci/admin/network/firewall/forwards">Port Forwardings&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a> =&amp;gt; &lt;a href="http://192.168.5.20/status.json">http://192.168.5.20/status.json&lt;/a>&lt;/li>
+&lt;li>alle anderen nicht weiter relevant&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://k4cg.org/index.php/Projekt:SpaceStatus">Projekt SpaceStatus&lt;/a>
+&lt;ul>
+&lt;li>Zugriff auf &lt;code>status.json&lt;/code>
+&lt;ul>
+&lt;li>IRC Bot (&lt;code>Rezeptionistin&lt;/code>)&lt;/li>
+&lt;li>&lt;code>sensor-fetcher&lt;/code> (s.u.)&lt;/li>
+&lt;li>Wiki Status&lt;/li>
+&lt;li>Telegram Bot (&lt;code>k4cgbot&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Dinge auf mqtt Server, die hier noch nicht aufgelistet sind: sollte alles gewesen sein, siehe &lt;a href="https://k4cg.org/index.php/Host:mqtt.intern.k4cg.org">Eintrag im Wiki&lt;/a>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;a href="https://k4cg.org/index.php/Stats">Projekt Stats&lt;/a>: Inhalt im Wiki veraltet, genauso wie &lt;a href="https://k4cg.org/index.php/Projekt:Sensors">Projekt Sensors&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Zeug auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a>
+&lt;ul>
+&lt;li>&lt;code>sensor-fetcher&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>/usr/local/sensor-fetcher/fetch.py&lt;/code> auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a>&lt;/li>
+&lt;li>schreibt Daten aus &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">status.json&lt;/a> in die InfluxDB &lt;code>sensors&lt;/code>&lt;/li>
+&lt;li>Tennis: Temp, Noise, Light&lt;/li>
+&lt;li>Externe Temperatur Wounderground, Open Weather Map, Dark Sky&lt;/li>
+&lt;li>Matomat: bier, mate, matecola, apfelschorle&lt;/li>
+&lt;li>Hosts&lt;/li>
+&lt;li>Door (Status, Humidity)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://graphs.k4cg.org/">Grafana&lt;/a>
+&lt;ul>
+&lt;li>laueft auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/0TS6_uMVk/k4cg-homeassi-influxdb?orgId=1">K4CG Homeassi InfluxDB&lt;/a>: &lt;code>home_assistant&lt;/code> (wird mit den Daten vom &lt;a href="http://homeassistant.local:8123">neuen Homeassi&lt;/a> befuellt)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/000000002/besucher?orgId=1">Besucher&lt;/a>: &lt;code>sensors&lt;/code> (wird von &lt;a href="https://k4cg.org/index.php/Stats#Besucherzahlen_2">Donnerstats&lt;/a> befuellt)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/puOH61mWz/getranke?orgId=1">Getraenke&lt;/a>: &lt;code>sensors&lt;/code> (wird von &lt;a href="https://k4cg.org/index.php/Projekt:SpaceStatus#Schnittstelle_graphs.k4cg.org">sensor-fetcher&lt;/a> befuellt)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1">IRC users&lt;/a>: &lt;code>sensors&lt;/code> (Quelle: ???)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/kxQQuHRZk/proxmox">Proxmox&lt;/a>: &lt;code>proxmox&lt;/code> (wird direkt von den Proxmox Hosts proxmox.intern.k4cg.org und beehive.intern.k4cg.org befuellt)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/Xudgohmik/rumpl-k4cg-org?orgId=1&amp;amp;refresh=1m">rumpl&lt;/a>: &lt;code>sensors&lt;/code> (wird vom &lt;code>telegraf&lt;/code> auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a> mit allen moeglichen Systemmetriken befuellt)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/000000001/sensoren?orgId=1">Sensoren&lt;/a>: &lt;code>wip&lt;/code> (wird vom &lt;code>telegraf&lt;/code> auf &lt;code>mqtt.intern.k4cg.org&lt;/code> befuellt; &lt;code>[&amp;quot;sensors/#&amp;quot;]&lt;/code> =&amp;gt; InfluxDB &lt;code>wip&lt;/code>)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/YKNaVklWz/sensoren-hass-io?orgId=1">Sensoren Hass.io&lt;/a>: &lt;code>homeassi&lt;/code> (alte DB, obsolet)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/6xEg3A1Vk/wahlcomputer?orgId=1">Wahlcomputer&lt;/a>: &lt;code>wahlcomputer&lt;/code> (DB fuer den &lt;a href="https://c3wahl.computer/">c3wahlcomputer&lt;/a> in der CG)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/000000003/offnungszeiten?orgId=1">Oeffnungszeiten&lt;/a>: &lt;code>sensors&lt;/code> (Quelle: ???)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> InfluxDB
+&lt;ul>
+&lt;li>laueft auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a>&lt;/li>
+&lt;li>Datenbanken:
+&lt;ul>
+&lt;li>&lt;code>sensors&lt;/code>: alle moeglichen Daten, default&lt;/li>
+&lt;li>&lt;code>apache&lt;/code>: ???&lt;/li>
+&lt;li>&lt;code>wip&lt;/code>: Quelle: &lt;code>telegraf&lt;/code> auf &lt;code>mqtt.intern.k4cg.org&lt;/code> (&lt;code>[&amp;quot;sensors/#&amp;quot;]&lt;/code>); Datenbasis fuer General/Sensoren&lt;/li>
+&lt;li>beehive: obsolet???&lt;/li>
+&lt;li>homeassi: DB vom alten Home Assi, obsolet&lt;/li>
+&lt;li>home_assistant: DB vom neuen Home Assi&lt;/li>
+&lt;li>proxmox: Proxmox Metriken von den Hosts &lt;code>beehive&lt;/code> und &lt;code>proxmox&lt;/code>&lt;/li>
+&lt;li>wahlcomputer: c3wahlcomputer&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://status.k4cg.org/status.json">https://status.k4cg.org/status.json&lt;/a>
+&lt;ul>
+&lt;li>zeigt auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a>&lt;/li>
+&lt;li>&lt;code>httpd&lt;/code> dort macht &lt;code>ProxyPass &amp;quot;/status.json&amp;quot; &amp;quot;http://k4cgrouter.duckdns.org:59468/status.json&amp;quot;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dinge auf rumpl, die hier noch nicht aufgelistet sind: &lt;strong>TODO&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
