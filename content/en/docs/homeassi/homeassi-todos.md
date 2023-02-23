@@ -36,7 +36,7 @@ description: >
     * [ ] [Apache mit status.json](https://k4cg.org/index.php/Host:mqtt.intern.k4cg.org#Apache)
       * stellt `status.json` unter <http://192.168.5.20/status.json> zur Verfuegung
       * von ausserhalb erreichbar unter <http://k4cgrouter.duckdns.org:59468/status.json> (Portweiterleitung im [router](https://k4cg.org/index.php/Host:router.intern.k4cg.org))
-      * Am Ende erreichbar unter <https://status.k4cg.org/status.json> (zeigt auf [router](https://k4cg.org/index.php/Host:router.intern.k4cg.org), `httpd` dort macht `ProxyPass "/status.json" "http://k4cgrouter.duckdns.org:59468/status.json"`)
+      * Am Ende erreichbar unter <https://status.k4cg.org/status.json> (zeigt auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org), `httpd` dort macht `ProxyPass "/status.json" "http://k4cgrouter.duckdns.org:59468/status.json"`)
     * [ ] [Space API](https://spaceapi.k4cg.org/)
       * laeuft auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org)
       * `update.py` in `/var/www/spaceapi.k4cg.org/` erstellt aus dem [status](https://status.k4cg.org/status.json) die Datei `spaceapi.json`
@@ -63,14 +63,14 @@ description: >
       * Door (Status, Humidity)
     * [ ] [Grafana](https://graphs.k4cg.org/)
       * laueft auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org)
-        * [K4CG Homeassi InfluxDB](https://graphs.k4cg.org/d/0TS6_uMVk/k4cg-homeassi-influxdb?orgId=1): `home_assistant` (dort werden die Daten vom [neuen Homeassi](http://homeassistant.local:8123) befuellt)
+        * [K4CG Homeassi InfluxDB](https://graphs.k4cg.org/d/0TS6_uMVk/k4cg-homeassi-influxdb?orgId=1): `home_assistant` (wird mit den Daten vom [neuen Homeassi](http://homeassistant.local:8123) befuellt)
         * [Besucher](https://graphs.k4cg.org/d/000000002/besucher?orgId=1): `sensors` (wird von [Donnerstats](https://k4cg.org/index.php/Stats#Besucherzahlen_2) befuellt)
         * [Getraenke](https://graphs.k4cg.org/d/puOH61mWz/getranke?orgId=1): `sensors` (wird von [sensor-fetcher](https://k4cg.org/index.php/Projekt:SpaceStatus#Schnittstelle_graphs.k4cg.org) befuellt)
         * [IRC users](https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1): `sensors` (Quelle: ???)
-        * [Proxmox](https://graphs.k4cg.org/d/kxQQuHRZk/proxmox): `proxmox` (direkt auf den Proxmox Hosts proxmox.intern.k4cg.org und beehive.intern.k4cg.org konfiguriert)
-        * [rumpl](https://graphs.k4cg.org/d/Xudgohmik/rumpl-k4cg-org?orgId=1&refresh=1m): `sensors` (wird vom `telegraf` auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org) befuellt)
-        * [Sensoren](https://graphs.k4cg.org/d/000000001/sensoren?orgId=1): `wip` (wir vom `telegraf` auf `mqtt.intern.k4cg.org` befuellt; `["sensors/#"]` => InfluxDB `wip`)
-        * [Sensoren Hass.io](https://graphs.k4cg.org/d/YKNaVklWz/sensoren-hass-io?orgId=1): `homeassi` (obsolet)
+        * [Proxmox](https://graphs.k4cg.org/d/kxQQuHRZk/proxmox): `proxmox` (wird direkt von den Proxmox Hosts proxmox.intern.k4cg.org und beehive.intern.k4cg.org befuellt)
+        * [rumpl](https://graphs.k4cg.org/d/Xudgohmik/rumpl-k4cg-org?orgId=1&refresh=1m): `sensors` (wird vom `telegraf` auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org) mit allen moeglichen Systemmetriken befuellt)
+        * [Sensoren](https://graphs.k4cg.org/d/000000001/sensoren?orgId=1): `wip` (wird vom `telegraf` auf `mqtt.intern.k4cg.org` befuellt; `["sensors/#"]` => InfluxDB `wip`)
+        * [Sensoren Hass.io](https://graphs.k4cg.org/d/YKNaVklWz/sensoren-hass-io?orgId=1): `homeassi` (alte DB, obsolet)
         * [Wahlcomputer](https://graphs.k4cg.org/d/6xEg3A1Vk/wahlcomputer?orgId=1): `wahlcomputer` (DB fuer den [c3wahlcomputer](https://c3wahl.computer/) in der CG)
         * [Oeffnungszeiten](https://graphs.k4cg.org/d/000000003/offnungszeiten?orgId=1): `sensors` (Quelle: ???)
     * [ ] InfluxDB
@@ -84,14 +84,10 @@ description: >
         * home_assistant: DB vom neuen Home Assi
         * proxmox: Proxmox Metriken von den Hosts `beehive` und `proxmox`
         * wahlcomputer: c3wahlcomputer
-      * **TODO:** Zuordnung Grafana Dashboards -> InfluxDB Datenbanken und wie die Daten in die InfluxDB kommen
-    * Telegraf? Apache Metrics?
-    * Zusätzliche Metriken (Wetter?)
-    * https://status.k4cg.org/status.json => Apache auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org) als reverse Proxy fuer http://k4cgrouter.duckdns.org:59468/status.json (s.o.)
-    * Dinge auf rumpl, die hier noch nicht aufgelistet sind
-    * Wie kommen die Daten ueberhaupt in die InfluxDB auf der rumpl? Scheinbar mit diesem Skript: `/usr/local/sensor-fetcher/fetch.py`. Das fragt die [status.json](http://k4cgrouter.duckdns.org:59468/status.json) ab und schreibt die Werte in die InfluxDB `sensors`
-    * Graphs haben teilweise `InfluxDB-wip` als Data source (InfluxDB Datenbank `wip`). Auf `mqtt.intern.k4cg.org` laeuft ein telegraf, der hat einen Output, bei dem die InfluxDB Datenbank `wip` konfiguriert ist. Der Input ist per MQTT (`sensors/#`).
-    * `influx --username admin --password ''`, `show users`, `show grants for $user`
+    * [ ] <https://status.k4cg.org/status.json>
+      * zeigt auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org)
+      * `httpd` dort macht `ProxyPass "/status.json" "http://k4cgrouter.duckdns.org:59468/status.json"`
+    * Dinge auf rumpl, die hier noch nicht aufgelistet sind: **TODO**
 
 ## Homeassi
 
