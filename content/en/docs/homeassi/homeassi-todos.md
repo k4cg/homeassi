@@ -46,10 +46,10 @@ description: >
       * alle anderen nicht weiter relevant
     * [ ] [Projekt SpaceStatus](https://k4cg.org/index.php/Projekt:SpaceStatus)
       * Zugriff auf `status.json`
-        * IRC Bot (`Rezeptionistin`)
-        * `sensor-fetcher` (s.u.)
-        * Wiki Status
-        * Telegram Bot (`k4cgbot`)
+        * IRC Bot (`Rezeptionistin`): http://k4cgrouter.duckdns.org:59468/status.json
+        * `sensor-fetcher` (s.u.): http://k4cgrouter.duckdns.org:59468/status.json
+        * Wiki Status: https://status.k4cg.org/status.json
+        * Telegram Bot (`k4cgbot`): http://k4cgrouter.duckdns.org:59468/status.json
     * [x] Dinge auf mqtt Server, die hier noch nicht aufgelistet sind: sollte alles gewesen sein, siehe [Eintrag im Wiki](https://k4cg.org/index.php/Host:mqtt.intern.k4cg.org)
     * [x] [Projekt Stats](https://k4cg.org/index.php/Stats): Inhalt im Wiki veraltet, genauso wie [Projekt Sensors](https://k4cg.org/index.php/Projekt:Sensors)
   * Zeug auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org)
@@ -66,7 +66,7 @@ description: >
         * [K4CG Homeassi InfluxDB](https://graphs.k4cg.org/d/0TS6_uMVk/k4cg-homeassi-influxdb?orgId=1): `home_assistant` (wird mit den Daten vom [neuen Homeassi](http://homeassistant.local:8123) befuellt)
         * [Besucher](https://graphs.k4cg.org/d/000000002/besucher?orgId=1): `sensors` (wird von [Donnerstats](https://k4cg.org/index.php/Stats#Besucherzahlen_2) befuellt)
         * [Getraenke](https://graphs.k4cg.org/d/puOH61mWz/getranke?orgId=1): `sensors` (wird von [sensor-fetcher](https://k4cg.org/index.php/Projekt:SpaceStatus#Schnittstelle_graphs.k4cg.org) befuellt)
-        * [IRC users](https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1): `sensors` (Quelle: ???)
+        * [IRC users](https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1): `sensors` (Quelle: vielleicht /usr/local/irc2influx)
         * [Proxmox](https://graphs.k4cg.org/d/kxQQuHRZk/proxmox): `proxmox` (wird direkt von den Proxmox Hosts proxmox.intern.k4cg.org und beehive.intern.k4cg.org befuellt)
         * [rumpl](https://graphs.k4cg.org/d/Xudgohmik/rumpl-k4cg-org?orgId=1&refresh=1m): `sensors` (wird vom `telegraf` auf [rumpl](https://k4cg.org/index.php/Host:rumpl.k4cg.org) mit allen moeglichen Systemmetriken befuellt)
         * [Sensoren](https://graphs.k4cg.org/d/000000001/sensoren?orgId=1): `wip` (wird vom `telegraf` auf `mqtt.intern.k4cg.org` befuellt; `["sensors/#"]` => InfluxDB `wip`)
