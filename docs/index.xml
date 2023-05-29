@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Welcome to Docsy</title><link>https://k4cg.github.io/homeassi/docs/</link><description>Recent content in Welcome to Docsy on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://k4cg.github.io/homeassi/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Before you begin</title><link>https://k4cg.github.io/homeassi/docs/get-started/docsy-as-module/installation-prerequisites/</link><pubDate>Wed, 08 Dec 2021 11:12:59 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/get-started/docsy-as-module/installation-prerequisites/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Welcome to Docsy</title><link>https://k4cg.github.io/homeassi/docs/</link><description>Recent content in Welcome to Docsy on Goldydocs</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://k4cg.github.io/homeassi/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Before you begin</title><link>https://k4cg.github.io/homeassi/docs/get-started/docsy-as-module/installation-prerequisites/</link><pubDate>Wed, 08 Dec 2021 11:12:59 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/get-started/docsy-as-module/installation-prerequisites/</guid><description>
 &lt;p>This page describes the prerequisites for building a site that uses Docsy as a Hugo Module.&lt;/p>
 &lt;h2 id="install-hugo">Install Hugo&lt;/h2>
 &lt;p>You need a &lt;a href="https://github.com/gohugoio/hugo/releases">recent &lt;strong>extended&lt;/strong> version&lt;/a> (we recommend version 0.73.0 or later) of &lt;a href="https://gohugo.io/">Hugo&lt;/a> to do local builds and previews of sites (like this one) that use Docsy. If you install from the release page, make sure to get the &lt;code>extended&lt;/code> Hugo version, which supports &lt;a href="https://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html">SCSS&lt;/a>; you may need to scroll down the list of releases to see it.&lt;/p>
@@ -169,7 +169,7 @@ id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">weight&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">docs&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">description&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">A special section with a docs layout.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> A special section with a docs layout.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
@@ -409,7 +409,7 @@ id="tabs-03-02" role="tabpanel" aria-labelled-by="tabs-03-02-tab">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">linkTitle&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Adding Content&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">weight&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">description&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Add different types of content to your Docsy site.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> Add different types of content to your Docsy site.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
@@ -1224,7 +1224,7 @@ id="tabs-16-02" role="tabpanel" aria-labelled-by="tabs-16-02-tab">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">linkTitle&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Adding Content&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">weight&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">description&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Add different types of content to your Docsy site.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> Add different types of content to your Docsy site.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">sitemap&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">priority&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
@@ -2391,7 +2391,7 @@ id="tabs-03-02" role="tabpanel" aria-labelled-by="tabs-03-02-tab">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">date&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">2017-01-05&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">weight&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">description&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Customize site navigation and search for your Docsy site.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> Customize site navigation and search for your Docsy site.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
@@ -2459,7 +2459,7 @@ id="tabs-05-02" role="tabpanel" aria-labelled-by="tabs-05-02-tab">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">toc_hide&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">hide_summary&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">description&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Page hidden from both the TOC menu and the section summary list.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"> Page hidden from both the TOC menu and the section summary list.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
@@ -3941,40 +3941,40 @@ Norway Spruce Picea abies shoot with foliage buds.
 &lt;/figcaption>
 &lt;/figure>
 &lt;p>The example above has also a byline with photo attribution added. When using illustrations with a free license from &lt;a href="https://commons.wikimedia.org/">WikiMedia&lt;/a> and similar, you will in most situations need a way to attribute the author or licensor. You can add metadata to your page resources in the page front matter. The &lt;code>byline&lt;/code> param is used by convention in this theme:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link disabled"
-id="tabs-05-00-tab" data-toggle="tab" href="#tabs-05-00" role="tab"
-aria-controls="tabs-05-00" aria-selected="false">
+id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
+aria-controls="tabs-01-00" aria-selected="false">
 Front matter:
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-05-01-tab" data-toggle="tab" href="#tabs-05-01" role="tab"
-aria-controls="tabs-05-01" aria-selected="false">
+id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
+aria-controls="tabs-01-01" aria-selected="false">
 toml
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-05-02-tab" data-toggle="tab" href="#tabs-05-02" role="tab"
-aria-controls="tabs-05-02" aria-selected="false">
+id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
+aria-controls="tabs-01-02" aria-selected="false">
 yaml
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-05-03-tab" data-toggle="tab" href="#tabs-05-03" role="tab"
-aria-controls="tabs-05-03" aria-selected="false">
+id="tabs-01-03-tab" data-toggle="tab" href="#tabs-01-03" role="tab"
+aria-controls="tabs-01-03" aria-selected="false">
 json
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tab-content" id="tabs-5-content">
+&lt;div class="tab-content" id="tabs-1-content">
 &lt;div class="tab-pane fade"
-id="tabs-05-00" role="tabpanel" aria-labelled-by="tabs-05-00-tab">
+id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
 &lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade show active"
-id="tabs-05-01" role="tabpanel" aria-labelled-by="tabs-05-01-tab">
+id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">+++&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">[[&lt;/span>&lt;span style="color:#000">resources&lt;/span>&lt;span style="color:#000;font-weight:bold">]]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">src&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;**spruce*.jpg&amp;#34;&lt;/span>
@@ -3984,7 +3984,7 @@ id="tabs-05-01" role="tabpanel" aria-labelled-by="tabs-05-01-tab">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">+++&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-05-02" role="tabpanel" aria-labelled-by="tabs-05-02-tab">
+id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">resources&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>- &lt;span style="color:#204a87;font-weight:bold">src&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;**spruce*.jpg&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -3993,7 +3993,7 @@ id="tabs-05-02" role="tabpanel" aria-labelled-by="tabs-05-02-tab">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-05-03" role="tabpanel" aria-labelled-by="tabs-05-03-tab">
+id="tabs-01-03" role="tabpanel" aria-labelled-by="tabs-01-03-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;resources&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -4030,40 +4030,40 @@ id="tabs-05-03" role="tabpanel" aria-labelled-by="tabs-05-03-tab">
 &lt;/table>
 &lt;h3 id="swaggerui">swaggerui&lt;/h3>
 &lt;p>The &lt;code>swaggerui&lt;/code> shortcode can be placed anywhere inside a page with the &lt;a href="https://github.com/google/docsy/tree/main/layouts/swagger">&lt;code>swagger&lt;/code> layout&lt;/a>; it renders &lt;a href="https://swagger.io/tools/swagger-ui/">Swagger UI&lt;/a> using any OpenAPI YAML or JSON file as source. This file can be hosted anywhere you like, for example in your site&amp;rsquo;s root &lt;a href="https://k4cg.github.io/homeassi/docs/adding-content/content/#adding-static-content">&lt;code>/static&lt;/code> folder&lt;/a>.&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link disabled"
-id="tabs-06-00-tab" data-toggle="tab" href="#tabs-06-00" role="tab"
-aria-controls="tabs-06-00" aria-selected="false">
+id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
+aria-controls="tabs-01-00" aria-selected="false">
 Front matter:
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link active"
-id="tabs-06-01-tab" data-toggle="tab" href="#tabs-06-01" role="tab"
-aria-controls="tabs-06-01" aria-selected="false">
+id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
+aria-controls="tabs-01-01" aria-selected="false">
 toml
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-06-02-tab" data-toggle="tab" href="#tabs-06-02" role="tab"
-aria-controls="tabs-06-02" aria-selected="false">
+id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
+aria-controls="tabs-01-02" aria-selected="false">
 yaml
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link"
-id="tabs-06-03-tab" data-toggle="tab" href="#tabs-06-03" role="tab"
-aria-controls="tabs-06-03" aria-selected="false">
+id="tabs-01-03-tab" data-toggle="tab" href="#tabs-01-03" role="tab"
+aria-controls="tabs-01-03" aria-selected="false">
 json
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tab-content" id="tabs-6-content">
+&lt;div class="tab-content" id="tabs-1-content">
 &lt;div class="tab-pane fade"
-id="tabs-06-00" role="tabpanel" aria-labelled-by="tabs-06-00-tab">
+id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
 &lt;pre tabindex="0">&lt;code>&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade show active"
-id="tabs-06-01" role="tabpanel" aria-labelled-by="tabs-06-01-tab">
+id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a40000">+++&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">title&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Pet Store API&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">type&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;swagger&amp;#34;&lt;/span>
@@ -4074,7 +4074,7 @@ id="tabs-06-01" role="tabpanel" aria-labelled-by="tabs-06-01-tab">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span> &lt;span style="color:#000">swaggerui&lt;/span> &lt;span style="color:#000">src&lt;/span>&lt;span style="color:#000;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/openapi/petstore.yaml&amp;#34;&lt;/span> &lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#000;font-weight:bold">}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-06-02" role="tabpanel" aria-labelled-by="tabs-06-02-tab">
+id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">title&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Pet Store API&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">swagger&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -4085,7 +4085,7 @@ id="tabs-06-02" role="tabpanel" aria-labelled-by="tabs-06-02-tab">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>{{&lt;span style="color:#000">&amp;lt; swaggerui src=&amp;#34;/openapi/petstore.yaml&amp;#34; &amp;gt;}}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-06-03" role="tabpanel" aria-labelled-by="tabs-06-03-tab">
+id="tabs-01-03" role="tabpanel" aria-labelled-by="tabs-01-03-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;title&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Pet Store API&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;swagger&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>
@@ -4173,78 +4173,78 @@ in the response headers.&amp;rdquo; you &lt;strong>CAN&lt;/strong> embed it, but
 &lt;/div>
 &lt;h2 id="tabbed-panes">Tabbed panes&lt;/h2>
 &lt;p>Sometimes it&amp;rsquo;s very useful to have tabbed panes when authoring content. One common use-case is to show multiple syntax highlighted code blocks that showcase the same problem, and how to solve it in different programming languages. As an example, the tabbed pane below shows the language-specific variants of the famous &lt;code>Hello world!&lt;/code> program one usually writes first when learning a new programming language:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-8" role="tablist">
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link active persistLang-C"
-id="tabs-08-00-tab" data-toggle="tab" href="#tabs-08-00" role="tab"
-onclick="persistLang(&amp;#34;C&amp;#34;);"aria-controls="tabs-08-00" aria-selected="false">
+id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
+onclick="persistLang(&amp;#34;C&amp;#34;);"aria-controls="tabs-01-00" aria-selected="false">
 C
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-C--"
-id="tabs-08-01-tab" data-toggle="tab" href="#tabs-08-01" role="tab"
-onclick="persistLang(&amp;#34;C--&amp;#34;);"aria-controls="tabs-08-01" aria-selected="false">
+id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
+onclick="persistLang(&amp;#34;C--&amp;#34;);"aria-controls="tabs-01-01" aria-selected="false">
 C++
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-Go"
-id="tabs-08-02-tab" data-toggle="tab" href="#tabs-08-02" role="tab"
-onclick="persistLang(&amp;#34;Go&amp;#34;);"aria-controls="tabs-08-02" aria-selected="false">
+id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
+onclick="persistLang(&amp;#34;Go&amp;#34;);"aria-controls="tabs-01-02" aria-selected="false">
 Go
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-Java"
-id="tabs-08-03-tab" data-toggle="tab" href="#tabs-08-03" role="tab"
-onclick="persistLang(&amp;#34;Java&amp;#34;);"aria-controls="tabs-08-03" aria-selected="false">
+id="tabs-01-03-tab" data-toggle="tab" href="#tabs-01-03" role="tab"
+onclick="persistLang(&amp;#34;Java&amp;#34;);"aria-controls="tabs-01-03" aria-selected="false">
 Java
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-Kotlin"
-id="tabs-08-04-tab" data-toggle="tab" href="#tabs-08-04" role="tab"
-onclick="persistLang(&amp;#34;Kotlin&amp;#34;);"aria-controls="tabs-08-04" aria-selected="false">
+id="tabs-01-04-tab" data-toggle="tab" href="#tabs-01-04" role="tab"
+onclick="persistLang(&amp;#34;Kotlin&amp;#34;);"aria-controls="tabs-01-04" aria-selected="false">
 Kotlin
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-Lua"
-id="tabs-08-05-tab" data-toggle="tab" href="#tabs-08-05" role="tab"
-onclick="persistLang(&amp;#34;Lua&amp;#34;);"aria-controls="tabs-08-05" aria-selected="false">
+id="tabs-01-05-tab" data-toggle="tab" href="#tabs-01-05" role="tab"
+onclick="persistLang(&amp;#34;Lua&amp;#34;);"aria-controls="tabs-01-05" aria-selected="false">
 Lua
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-PHP"
-id="tabs-08-06-tab" data-toggle="tab" href="#tabs-08-06" role="tab"
-onclick="persistLang(&amp;#34;PHP&amp;#34;);"aria-controls="tabs-08-06" aria-selected="false">
+id="tabs-01-06-tab" data-toggle="tab" href="#tabs-01-06" role="tab"
+onclick="persistLang(&amp;#34;PHP&amp;#34;);"aria-controls="tabs-01-06" aria-selected="false">
 PHP
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-Python"
-id="tabs-08-07-tab" data-toggle="tab" href="#tabs-08-07" role="tab"
-onclick="persistLang(&amp;#34;Python&amp;#34;);"aria-controls="tabs-08-07" aria-selected="false">
+id="tabs-01-07-tab" data-toggle="tab" href="#tabs-01-07" role="tab"
+onclick="persistLang(&amp;#34;Python&amp;#34;);"aria-controls="tabs-01-07" aria-selected="false">
 Python
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-Ruby"
-id="tabs-08-08-tab" data-toggle="tab" href="#tabs-08-08" role="tab"
-onclick="persistLang(&amp;#34;Ruby&amp;#34;);"aria-controls="tabs-08-08" aria-selected="false">
+id="tabs-01-08-tab" data-toggle="tab" href="#tabs-01-08" role="tab"
+onclick="persistLang(&amp;#34;Ruby&amp;#34;);"aria-controls="tabs-01-08" aria-selected="false">
 Ruby
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-Scala"
-id="tabs-08-09-tab" data-toggle="tab" href="#tabs-08-09" role="tab"
-onclick="persistLang(&amp;#34;Scala&amp;#34;);"aria-controls="tabs-08-09" aria-selected="false">
+id="tabs-01-09-tab" data-toggle="tab" href="#tabs-01-09" role="tab"
+onclick="persistLang(&amp;#34;Scala&amp;#34;);"aria-controls="tabs-01-09" aria-selected="false">
 Scala
 &lt;/a>
 &lt;/li>&lt;li class="nav-item ml-auto">
 &lt;a class="nav-link persistLang-Reference"
-id="tabs-08-10-tab" data-toggle="tab" href="#tabs-08-10" role="tab"
-onclick="persistLang(&amp;#34;Reference&amp;#34;);"aria-controls="tabs-08-10" aria-selected="false">
+id="tabs-01-10-tab" data-toggle="tab" href="#tabs-01-10" role="tab"
+onclick="persistLang(&amp;#34;Reference&amp;#34;);"aria-controls="tabs-01-10" aria-selected="false">
 Reference
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tab-content" id="tabs-8-content">
+&lt;div class="tab-content" id="tabs-1-content">
 &lt;div class="tab-pane fade show active"
-id="tabs-08-00" role="tabpanel" aria-labelled-by="tabs-08-00-tab">
+id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-C" data-lang="C">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
@@ -4255,7 +4255,7 @@ id="tabs-08-00" role="tabpanel" aria-labelled-by="tabs-08-00-tab">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-01" role="tabpanel" aria-labelled-by="tabs-08-01-tab">
+id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-C++" data-lang="C++">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#include&lt;/span> &lt;span style="color:#8f5902;font-style:italic">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">int&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span>
@@ -4264,7 +4264,7 @@ id="tabs-08-01" role="tabpanel" aria-labelled-by="tabs-08-01-tab">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-02" role="tabpanel" aria-labelled-by="tabs-08-02-tab">
+id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Go" data-lang="Go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">package&lt;/span> &lt;span style="color:#000">main&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">import&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;fmt&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">func&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">()&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
@@ -4272,7 +4272,7 @@ id="tabs-08-02" role="tabpanel" aria-labelled-by="tabs-08-02-tab">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-03" role="tabpanel" aria-labelled-by="tabs-08-03-tab">
+id="tabs-01-03" role="tabpanel" aria-labelled-by="tabs-01-03-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">class&lt;/span> &lt;span style="color:#000">HelloWorld&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">static&lt;/span> &lt;span style="color:#204a87;font-weight:bold">public&lt;/span> &lt;span style="color:#204a87;font-weight:bold">void&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#000">String&lt;/span> &lt;span style="color:#000">args&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">[]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">System&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">out&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">.&lt;/span>&lt;span style="color:#c4a000">println&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">);&lt;/span>
@@ -4280,38 +4280,38 @@ id="tabs-08-03" role="tabpanel" aria-labelled-by="tabs-08-03-tab">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-04" role="tabpanel" aria-labelled-by="tabs-08-04-tab">
+id="tabs-01-04" role="tabpanel" aria-labelled-by="tabs-01-04-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Kotlin" data-lang="Kotlin">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">fun&lt;/span> &lt;span style="color:#000">main&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">args&lt;/span> &lt;span style="color:#000;font-weight:bold">:&lt;/span> &lt;span style="color:#000">Array&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>&lt;span style="color:#000">String&lt;/span>&lt;span style="color:#000;font-weight:bold">&amp;gt;)&lt;/span> &lt;span style="color:#000;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">println&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello, world!&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-05" role="tabpanel" aria-labelled-by="tabs-08-05-tab">
+id="tabs-01-05" role="tabpanel" aria-labelled-by="tabs-01-05-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Lua" data-lang="Lua">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">print&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello world&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-06" role="tabpanel" aria-labelled-by="tabs-08-06-tab">
+id="tabs-01-06" role="tabpanel" aria-labelled-by="tabs-01-06-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-PHP" data-lang="PHP">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">&amp;lt;?&lt;/span>&lt;span style="color:#000">php&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;Hello World!&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">?&amp;gt;&lt;/span>&lt;span style="color:#a40000">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-07" role="tabpanel" aria-labelled-by="tabs-08-07-tab">
+id="tabs-01-07" role="tabpanel" aria-labelled-by="tabs-01-07-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Python" data-lang="Python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">print&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-08" role="tabpanel" aria-labelled-by="tabs-08-08-tab">
+id="tabs-01-08" role="tabpanel" aria-labelled-by="tabs-01-08-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Ruby" data-lang="Ruby">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">puts&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Hello World!&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-pane fade"
-id="tabs-08-09" role="tabpanel" aria-labelled-by="tabs-08-09-tab">
+id="tabs-01-09" role="tabpanel" aria-labelled-by="tabs-01-09-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Scala" data-lang="Scala">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">object&lt;/span> &lt;span style="color:#000">HelloWorld&lt;/span> &lt;span style="color:#204a87;font-weight:bold">extends&lt;/span> &lt;span style="color:#000">App&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">println&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div class="tab-body tab-pane fade"
-id="tabs-08-10" role="tabpanel" aria-labelled-by="tabs-08-10-tab">
+id="tabs-01-10" role="tabpanel" aria-labelled-by="tabs-01-10-tab">
 &lt;script type="text/javascript">
 function resizeIframe(iframe) {
 iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
@@ -4339,49 +4339,49 @@ iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">%&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tab&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">%&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">{{&lt;/span>&lt;span style="color:#a40000">&amp;lt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">/&lt;/span>&lt;span style="color:#000">tabpane&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#a40000">&amp;gt;&lt;/span>&lt;span style="color:#8f5902;font-style:italic">}}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code translates to the right aligned tabbed pane below, showing a &lt;code>Welcome!&lt;/code> greeting in English, German or Swahili:&lt;/p>
-&lt;ul class="nav nav-tabs justify-content-end" id="tabs-9" role="tablist">
+&lt;ul class="nav nav-tabs justify-content-end" id="tabs-1" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link disabled"
-id="tabs-09-00-tab" data-toggle="tab" href="#tabs-09-00" role="tab"
-aria-controls="tabs-09-00" aria-selected="false">
+id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
+aria-controls="tabs-01-00" aria-selected="false">
 &lt;strong>Languages&lt;/strong>:
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link active persistLang-en"
-id="tabs-09-01-tab" data-toggle="tab" href="#tabs-09-01" role="tab"
-onclick="persistLang(&amp;#34;en&amp;#34;);"aria-controls="tabs-09-01" aria-selected="false">
+id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
+onclick="persistLang(&amp;#34;en&amp;#34;);"aria-controls="tabs-01-01" aria-selected="false">
 English
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-de"
-id="tabs-09-02-tab" data-toggle="tab" href="#tabs-09-02" role="tab"
-onclick="persistLang(&amp;#34;de&amp;#34;);"aria-controls="tabs-09-02" aria-selected="false">
+id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
+onclick="persistLang(&amp;#34;de&amp;#34;);"aria-controls="tabs-01-02" aria-selected="false">
 German
 &lt;/a>
 &lt;/li>&lt;li class="nav-item">
 &lt;a class="nav-link persistLang-sw"
-id="tabs-09-03-tab" data-toggle="tab" href="#tabs-09-03" role="tab"
-onclick="persistLang(&amp;#34;sw&amp;#34;);"aria-controls="tabs-09-03" aria-selected="false">
+id="tabs-01-03-tab" data-toggle="tab" href="#tabs-01-03" role="tab"
+onclick="persistLang(&amp;#34;sw&amp;#34;);"aria-controls="tabs-01-03" aria-selected="false">
 Swahili
 &lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;div class="tab-content" id="tabs-9-content">
+&lt;div class="tab-content" id="tabs-1-content">
 &lt;div class="tab-body tab-pane fade"
-id="tabs-09-00" role="tabpanel" aria-labelled-by="tabs-09-00-tab">
+id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
 &lt;/div>
 &lt;div class="tab-body tab-pane fade show active"
-id="tabs-09-01" role="tabpanel" aria-labelled-by="tabs-09-01-tab">
+id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
 &lt;p>&lt;img src="flags/uk.png" alt="Flag United Kingdom">
 &lt;strong>Welcome!&lt;/strong>&lt;/p>
 &lt;/div>
 &lt;div class="tab-body tab-pane fade"
-id="tabs-09-02" role="tabpanel" aria-labelled-by="tabs-09-02-tab">
+id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
 &lt;b>Herzlich willkommen!&lt;/b>
 &lt;img src="flags/de.png" alt="Flag Germany" style="float: right; padding: 0 0 0 0px">
 &lt;/div>
 &lt;div class="tab-body tab-pane fade"
-id="tabs-09-03" role="tabpanel" aria-labelled-by="tabs-09-03-tab">
+id="tabs-01-03" role="tabpanel" aria-labelled-by="tabs-01-03-tab">
 &lt;p>&lt;img src="flags/tz.png" alt="Flag Tanzania">
 &lt;strong>Karibu sana!&lt;/strong>&lt;/p>
 &lt;/div>
@@ -8074,10 +8074,10 @@ id="tabs-17-03" role="tabpanel" aria-labelled-by="tabs-17-03-tab">
 &lt;ul>
 &lt;li>Zugriff auf &lt;code>status.json&lt;/code>
 &lt;ul>
-&lt;li>IRC Bot (&lt;code>Rezeptionistin&lt;/code>)&lt;/li>
-&lt;li>&lt;code>sensor-fetcher&lt;/code> (s.u.)&lt;/li>
-&lt;li>Wiki Status&lt;/li>
-&lt;li>Telegram Bot (&lt;code>k4cgbot&lt;/code>)&lt;/li>
+&lt;li>IRC Bot (&lt;code>Rezeptionistin&lt;/code>): &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a>&lt;/li>
+&lt;li>&lt;code>sensor-fetcher&lt;/code> (s.u.): &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a>&lt;/li>
+&lt;li>Wiki Status: &lt;a href="https://status.k4cg.org/status.json">https://status.k4cg.org/status.json&lt;/a>&lt;/li>
+&lt;li>Telegram Bot (&lt;code>k4cgbot&lt;/code>): &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -8106,7 +8106,7 @@ id="tabs-17-03" role="tabpanel" aria-labelled-by="tabs-17-03-tab">
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/0TS6_uMVk/k4cg-homeassi-influxdb?orgId=1">K4CG Homeassi InfluxDB&lt;/a>: &lt;code>home_assistant&lt;/code> (wird mit den Daten vom &lt;a href="http://homeassistant.local:8123">neuen Homeassi&lt;/a> befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/000000002/besucher?orgId=1">Besucher&lt;/a>: &lt;code>sensors&lt;/code> (wird von &lt;a href="https://k4cg.org/index.php/Stats#Besucherzahlen_2">Donnerstats&lt;/a> befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/puOH61mWz/getranke?orgId=1">Getraenke&lt;/a>: &lt;code>sensors&lt;/code> (wird von &lt;a href="https://k4cg.org/index.php/Projekt:SpaceStatus#Schnittstelle_graphs.k4cg.org">sensor-fetcher&lt;/a> befuellt)&lt;/li>
-&lt;li>&lt;a href="https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1">IRC users&lt;/a>: &lt;code>sensors&lt;/code> (Quelle: ???)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1">IRC users&lt;/a>: &lt;code>sensors&lt;/code> (Quelle: vielleicht /usr/local/irc2influx)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/kxQQuHRZk/proxmox">Proxmox&lt;/a>: &lt;code>proxmox&lt;/code> (wird direkt von den Proxmox Hosts proxmox.intern.k4cg.org und beehive.intern.k4cg.org befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/Xudgohmik/rumpl-k4cg-org?orgId=1&amp;amp;refresh=1m">rumpl&lt;/a>: &lt;code>sensors&lt;/code> (wird vom &lt;code>telegraf&lt;/code> auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a> mit allen moeglichen Systemmetriken befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/000000001/sensoren?orgId=1">Sensoren&lt;/a>: &lt;code>wip&lt;/code> (wird vom &lt;code>telegraf&lt;/code> auf &lt;code>mqtt.intern.k4cg.org&lt;/code> befuellt; &lt;code>[&amp;quot;sensors/#&amp;quot;]&lt;/code> =&amp;gt; InfluxDB &lt;code>wip&lt;/code>)&lt;/li>

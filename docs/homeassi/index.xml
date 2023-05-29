@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Homeassi</title><link>https://k4cg.github.io/homeassi/docs/homeassi/</link><description>Recent content in Homeassi on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://k4cg.github.io/homeassi/docs/homeassi/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Homeassi Documentation</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-documentation/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-documentation/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Homeassi</title><link>https://k4cg.github.io/homeassi/docs/homeassi/</link><description>Recent content in Homeassi on Goldydocs</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://k4cg.github.io/homeassi/docs/homeassi/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Homeassi Documentation</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-documentation/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-documentation/</guid><description>
 &lt;h2 id="grundlegendes">Grundlegendes&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -867,10 +867,10 @@
 &lt;ul>
 &lt;li>Zugriff auf &lt;code>status.json&lt;/code>
 &lt;ul>
-&lt;li>IRC Bot (&lt;code>Rezeptionistin&lt;/code>)&lt;/li>
-&lt;li>&lt;code>sensor-fetcher&lt;/code> (s.u.)&lt;/li>
-&lt;li>Wiki Status&lt;/li>
-&lt;li>Telegram Bot (&lt;code>k4cgbot&lt;/code>)&lt;/li>
+&lt;li>IRC Bot (&lt;code>Rezeptionistin&lt;/code>): &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a>&lt;/li>
+&lt;li>&lt;code>sensor-fetcher&lt;/code> (s.u.): &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a>&lt;/li>
+&lt;li>Wiki Status: &lt;a href="https://status.k4cg.org/status.json">https://status.k4cg.org/status.json&lt;/a>&lt;/li>
+&lt;li>Telegram Bot (&lt;code>k4cgbot&lt;/code>): &lt;a href="http://k4cgrouter.duckdns.org:59468/status.json">http://k4cgrouter.duckdns.org:59468/status.json&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -899,7 +899,7 @@
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/0TS6_uMVk/k4cg-homeassi-influxdb?orgId=1">K4CG Homeassi InfluxDB&lt;/a>: &lt;code>home_assistant&lt;/code> (wird mit den Daten vom &lt;a href="http://homeassistant.local:8123">neuen Homeassi&lt;/a> befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/000000002/besucher?orgId=1">Besucher&lt;/a>: &lt;code>sensors&lt;/code> (wird von &lt;a href="https://k4cg.org/index.php/Stats#Besucherzahlen_2">Donnerstats&lt;/a> befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/puOH61mWz/getranke?orgId=1">Getraenke&lt;/a>: &lt;code>sensors&lt;/code> (wird von &lt;a href="https://k4cg.org/index.php/Projekt:SpaceStatus#Schnittstelle_graphs.k4cg.org">sensor-fetcher&lt;/a> befuellt)&lt;/li>
-&lt;li>&lt;a href="https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1">IRC users&lt;/a>: &lt;code>sensors&lt;/code> (Quelle: ???)&lt;/li>
+&lt;li>&lt;a href="https://graphs.k4cg.org/d/wKojG1kiz/irc-k4cg?orgId=1">IRC users&lt;/a>: &lt;code>sensors&lt;/code> (Quelle: vielleicht /usr/local/irc2influx)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/kxQQuHRZk/proxmox">Proxmox&lt;/a>: &lt;code>proxmox&lt;/code> (wird direkt von den Proxmox Hosts proxmox.intern.k4cg.org und beehive.intern.k4cg.org befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/Xudgohmik/rumpl-k4cg-org?orgId=1&amp;amp;refresh=1m">rumpl&lt;/a>: &lt;code>sensors&lt;/code> (wird vom &lt;code>telegraf&lt;/code> auf &lt;a href="https://k4cg.org/index.php/Host:rumpl.k4cg.org">rumpl&lt;/a> mit allen moeglichen Systemmetriken befuellt)&lt;/li>
 &lt;li>&lt;a href="https://graphs.k4cg.org/d/000000001/sensoren?orgId=1">Sensoren&lt;/a>: &lt;code>wip&lt;/code> (wird vom &lt;code>telegraf&lt;/code> auf &lt;code>mqtt.intern.k4cg.org&lt;/code> befuellt; &lt;code>[&amp;quot;sensors/#&amp;quot;]&lt;/code> =&amp;gt; InfluxDB &lt;code>wip&lt;/code>)&lt;/li>
