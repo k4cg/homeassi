@@ -1,4 +1,6 @@
 baseURL = "https://k4cg.github.io/homeassi"
+# Set this for local builds to work properly
+# baseURL = "localhost"
 title = "K4CG Homeassi Documentation"
 
 # Language settings
