@@ -8007,14 +8007,14 @@ id="tabs-17-03" role="tabpanel" aria-labelled-by="tabs-17-03-tab">
 &lt;/div></description></item><item><title>Docs: K4 internal communicaton diagrams</title><link>https://k4cg.github.io/homeassi/docs/homeassi/diagrams/</link><pubDate>Mon, 29 May 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/diagrams/</guid><description>
 &lt;h2 id="aktueller-zustand">Aktueller Zustand&lt;/h2>
 &lt;figure>
-&lt;img src="https://k4cg.github.io/homeassi/images/k4cg-internal-communication.drawio.svg"
+&lt;img src="https://k4cg.github.io/homeassi/homeassi/images/k4cg-internal-communication.drawio.svg"
 alt="Diagramm des aktuellen Zustands"/> &lt;figcaption>
 &lt;p>Diagramm des aktuellen Zustands&lt;/p>
 &lt;/figcaption>
 &lt;/figure>
 &lt;h2 id="zielzustand">Zielzustand&lt;/h2>
 &lt;figure>
-&lt;img src="https://k4cg.github.io/homeassi/images/k4cg-internal-communication-mit-api.drawio.svg"
+&lt;img src="https://k4cg.github.io/homeassi/homeassi/images/k4cg-internal-communication-mit-api.drawio.svg"
 alt="Diagramm des Zielzustands"/> &lt;figcaption>
 &lt;p>Diagramm des Zielzustands&lt;/p>
 &lt;/figcaption>
@@ -8026,7 +8026,9 @@ alt="Diagramm des Zielzustands"/> &lt;figcaption>
 &lt;li>&lt;code>npm install&lt;/code> ausfuehren, um &lt;code>package-lock.json&lt;/code> zu erzeugen&lt;/li>
 &lt;li>&lt;code>.gitignore&lt;/code> anpassen (&lt;code>package-lock.json&lt;/code> entfernen)&lt;/li>
 &lt;li>baseURL = &amp;ldquo;&lt;a href="https://k4cg.github.io/homeassi%22">https://k4cg.github.io/homeassi&amp;quot;&lt;/a> in &lt;code>config.toml&lt;/code> eintragen&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Homeassi Todos</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</guid><description>
+&lt;/ul>
+&lt;p>&lt;a href="https://github.com/gohugoio/hugo/issues/8078">https://github.com/gohugoio/hugo/issues/8078&lt;/a>
+&lt;a href="https://discourse.gohugo.io/t/github-actions-deployment-and-baseurl/40570">https://discourse.gohugo.io/t/github-actions-deployment-and-baseurl/40570&lt;/a>&lt;/p></description></item><item><title>Docs: Homeassi Todos</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</guid><description>
 &lt;h2 id="doku">Doku&lt;/h2>
 &lt;ul>
 &lt;li>Evtl. Issues fuer die einzelnen Punkte erstellen&lt;/li>
