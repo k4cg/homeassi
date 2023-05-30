@@ -9,8 +9,8 @@ description: >
 
 ## Aktueller Zustand
 
-{{< figure src="/images/k4cg-internal-communication.drawio.svg" caption="Diagramm des aktuellen Zustands">}}
+{{< figure src="/homeassi/images/k4cg-internal-communication.drawio.svg" caption="Diagramm des aktuellen Zustands">}}
 
 ## Zielzustand
 
-{{< figure src="/images/k4cg-internal-communication-mit-api.drawio.svg" caption="Diagramm des Zielzustands">}}
+{{< figure src="/homeassi/images/k4cg-internal-communication-mit-api.drawio.svg" caption="Diagramm des Zielzustands">}}
