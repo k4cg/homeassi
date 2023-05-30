@@ -13,3 +13,8 @@ description: >
 * `npm install` ausfuehren, um `package-lock.json` zu erzeugen
 * `.gitignore` anpassen (`package-lock.json` entfernen)
 * baseURL = "https://k4cg.github.io/homeassi" in `config.toml` eintragen
+
+
+https://github.com/gohugoio/hugo/issues/8078
+https://discourse.gohugo.io/t/github-actions-deployment-and-baseurl/40570
+
