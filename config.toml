@@ -1,6 +1,7 @@
+# TODO: create separate config files for local development and Github Pages
 baseURL = "https://k4cg.github.io/homeassi"
 # Set this for local builds to work properly
-# baseURL = "localhost"
+# baseURL = "localhost/"
 title = "K4CG Homeassi Documentation"
 
 # Language settings
