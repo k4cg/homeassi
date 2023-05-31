@@ -2,7 +2,7 @@
 title: "K4 internal communicaton diagrams"
 linkTitle: "Internal communication diagrams"
 date: 2023-05-29T21:57:00+01:00
-weight: 15
+weight: 20
 description: >
   Diagrams of the current state and the desired state.
 ---
