@@ -24,7 +24,7 @@ Falls die `baseURL` in der `config.toml` aber noch einen "Unterordner" hat (z.B.
 
 Loesung: Verwendung von [Page Bundles](https://gohugo.io/content-management/page-bundles/) statt Dateien im Ordner `static` abzulegen.
 
-Linksammlung zum Thema:
+### Linksammlung zum Thema
 
 * [When using a baseURL with path, links to static resources don't include path](https://github.com/gohugoio/hugo/issues/8078)
 * [GitHub Actions Deployment and BaseURL?](https://discourse.gohugo.io/t/github-actions-deployment-and-baseurl/40570)
