@@ -8016,30 +8016,7 @@ id="tabs-17-03" role="tabpanel" aria-labelled-by="tabs-17-03-tab">
 &lt;img src="https://k4cg.github.io/homeassi/homeassi/docs/homeassi/communication-diagrams/images/k4cg-internal-communication-mit-api.drawio.svg"/> &lt;figcaption>
 &lt;h4>Diagramm des Zielzustands&lt;/h4>
 &lt;/figcaption>
-&lt;/figure></description></item><item><title>Docs: Deployment mit Gitlab Pages</title><link>https://k4cg.github.io/homeassi/docs/homeassi/deploy-with-gitlab-pages/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/deploy-with-gitlab-pages/</guid><description>
-&lt;h2 id="schritte-fuer-deployment-mit-github-actions-auf-github-pages">Schritte fuer Deployment mit Github Actions auf Github Pages&lt;/h2>
-&lt;ul>
-&lt;li>Branch &lt;code>gh-pages&lt;/code> anlegen (&lt;a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&lt;/a>)&lt;/li>
-&lt;li>Github Workflow &lt;code>.github/workflows/gh-pages.yml&lt;/code> anlegen (&lt;a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a>)&lt;/li>
-&lt;li>Docsy spezifische Dinge einbauen (&lt;a href="https://github.com/marketplace/actions/hugo-setup#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli">https://github.com/marketplace/actions/hugo-setup#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli&lt;/a>)&lt;/li>
-&lt;li>&lt;code>npm install&lt;/code> ausfuehren, um &lt;code>package-lock.json&lt;/code> zu erzeugen&lt;/li>
-&lt;li>&lt;code>.gitignore&lt;/code> anpassen (&lt;code>package-lock.json&lt;/code> entfernen)&lt;/li>
-&lt;li>baseURL = &amp;ldquo;&lt;a href="https://k4cg.github.io/homeassi%22">https://k4cg.github.io/homeassi&amp;quot;&lt;/a> in &lt;code>config.toml&lt;/code> eintragen&lt;/li>
-&lt;/ul>
-&lt;h2 id="fuckup-mit-links-auf-dateien-im-static-ordner">Fuckup mit Links auf Dateien im /static Ordner&lt;/h2>
-&lt;p>tl;dr: im Root Verzeichnis gibt es den Ordner &lt;code>static&lt;/code>. Auf die darin abgelegten Dateien kann mit &lt;code>/filename.drawio&lt;/code> oder &lt;code>/foldername/filename.png&lt;/code> verlinkt werden. Das wird dann zu &lt;a href="https://name.tld/">https://name.tld/&lt;/a> bereitgestellt (z.B. &lt;a href="https://name.tld/filename.drawio">https://name.tld/filename.drawio&lt;/a>). Siehe &lt;a href="https://gohugo.io/content-management/static-files/">Hugo Doku&lt;/a>
-Falls die &lt;code>baseURL&lt;/code> in der &lt;code>config.toml&lt;/code> aber noch einen &amp;ldquo;Unterordner&amp;rdquo; hat (z.B. &lt;a href="https://k4cg.github.io/homeassi">https://k4cg.github.io/homeassi&lt;/a>), funktioniert das nicht mehr. Die relativen Links im Markdown werden in der erzeugten Webseite statt zu &lt;a href="https://k4cg.github.io/homeassi/filename.drawio">https://k4cg.github.io/homeassi/filename.drawio&lt;/a> zu &lt;a href="https://k4cg.github.io/filename.drawio">https://k4cg.github.io/filename.drawio&lt;/a> umgewandelt und sind kaputt.
-Moegliche Loesung: Verwendung von &lt;a href="https://gohugo.io/content-management/page-bundles/">Page Bundles&lt;/a> statt Dateien im Ordner &lt;code>static&lt;/code> abzulegen.&lt;/p>
-&lt;p>Linksammlung zum Thema:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/gohugoio/hugo/issues/8078">When using a baseURL with path, links to static resources don&amp;rsquo;t include path&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://discourse.gohugo.io/t/github-actions-deployment-and-baseurl/40570">GitHub Actions Deployment and BaseURL?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://discourse.gohugo.io/t/publication-on-github-pages-and-baseurl/43631">Publication on GitHub pages and BaseURL&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://discourse.gohugo.io/t/how-to-handle-urls-when-in-a-subfolder/42260/4?u=jmooring">How to handle URLs when in a subfolder?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/gohugoio/hugo/issues/10606">Clearly document how to compute URLs that are baseURL aware&amp;hellip;&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://discourse.gohugo.io/t/figure-shortcode-cannot-find-image-in-static-folder-in-site-com-subsite-baseurl/33357">Figure shortcode cannot find image in static folder in site.com/subsite baseURL&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://discourse.gohugo.io/t/docsy-theme-not-rendering-using-github-pages/28109/2">Docsy theme not rendering using GitHub Pages&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Homeassi Todos</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</guid><description>
+&lt;/figure></description></item><item><title>Docs: Homeassi Todos</title><link>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/homeassi-todos/</guid><description>
 &lt;h2 id="doku">Doku&lt;/h2>
 &lt;ul>
 &lt;li>Evtl. Issues fuer die einzelnen Punkte erstellen&lt;/li>
@@ -8192,4 +8169,27 @@ Moegliche Loesung: Verwendung von &lt;a href="https://gohugo.io/content-manageme
 &lt;li>Repo aufräumen (&lt;a href="https://github.com/k4cg/k4cg-automation">https://github.com/k4cg/k4cg-automation&lt;/a> und dieses Repo)&lt;/li>
 &lt;li>Evtl. neue VM provisionieren&lt;/li>
 &lt;li>Cleanup Zeug in Playbook einbauen (k4cg-automation)&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Deployment mit Gitlab Pages</title><link>https://k4cg.github.io/homeassi/docs/homeassi/deploy-with-gitlab-pages/</link><pubDate>Tue, 10 Jan 2023 21:57:00 +0100</pubDate><guid>https://k4cg.github.io/homeassi/docs/homeassi/deploy-with-gitlab-pages/</guid><description>
+&lt;h2 id="schritte-fuer-deployment-mit-github-actions-auf-github-pages">Schritte fuer Deployment mit Github Actions auf Github Pages&lt;/h2>
+&lt;ul>
+&lt;li>Branch &lt;code>gh-pages&lt;/code> anlegen (&lt;a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site&lt;/a>)&lt;/li>
+&lt;li>Github Workflow &lt;code>.github/workflows/gh-pages.yml&lt;/code> anlegen (&lt;a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/&lt;/a>)&lt;/li>
+&lt;li>Docsy spezifische Dinge einbauen (&lt;a href="https://github.com/marketplace/actions/hugo-setup#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli">https://github.com/marketplace/actions/hugo-setup#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli&lt;/a>)&lt;/li>
+&lt;li>&lt;code>npm install&lt;/code> ausfuehren, um &lt;code>package-lock.json&lt;/code> zu erzeugen&lt;/li>
+&lt;li>&lt;code>.gitignore&lt;/code> anpassen (&lt;code>package-lock.json&lt;/code> entfernen)&lt;/li>
+&lt;li>baseURL = &amp;ldquo;&lt;a href="https://k4cg.github.io/homeassi%22">https://k4cg.github.io/homeassi&amp;quot;&lt;/a> in &lt;code>config.toml&lt;/code> eintragen&lt;/li>
+&lt;/ul>
+&lt;h2 id="fuckup-mit-links-auf-dateien-im-static-ordner">Fuckup mit Links auf Dateien im /static Ordner&lt;/h2>
+&lt;p>tl;dr: im Root Verzeichnis gibt es den Ordner &lt;code>static&lt;/code>. Auf die darin abgelegten Dateien kann mit &lt;code>/filename.drawio&lt;/code> oder &lt;code>/foldername/filename.png&lt;/code> verlinkt werden. Das wird dann unter &lt;a href="https://name.tld/">https://name.tld/&lt;/a> bereitgestellt (z.B. &lt;a href="https://name.tld/filename.drawio">https://name.tld/filename.drawio&lt;/a>). Siehe &lt;a href="https://gohugo.io/content-management/static-files/">Hugo Doku&lt;/a>.&lt;/p>
+&lt;p>Falls die &lt;code>baseURL&lt;/code> in der &lt;code>config.toml&lt;/code> aber noch einen &amp;ldquo;Unterordner&amp;rdquo; hat (z.B. &lt;a href="https://k4cg.github.io/homeassi">https://k4cg.github.io/homeassi&lt;/a>), funktioniert das nicht mehr. Die relativen Links im Markdown werden in der erzeugten Webseite statt zu &lt;a href="https://k4cg.github.io/homeassi/filename.drawio">https://k4cg.github.io/homeassi/filename.drawio&lt;/a> zu &lt;a href="https://k4cg.github.io/filename.drawio">https://k4cg.github.io/filename.drawio&lt;/a> umgewandelt und sind kaputt.
+Moegliche Loesung: Verwendung von &lt;a href="https://gohugo.io/content-management/page-bundles/">Page Bundles&lt;/a> statt Dateien im Ordner &lt;code>static&lt;/code> abzulegen.&lt;/p>
+&lt;p>Linksammlung zum Thema:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/gohugoio/hugo/issues/8078">When using a baseURL with path, links to static resources don&amp;rsquo;t include path&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://discourse.gohugo.io/t/github-actions-deployment-and-baseurl/40570">GitHub Actions Deployment and BaseURL?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://discourse.gohugo.io/t/publication-on-github-pages-and-baseurl/43631">Publication on GitHub pages and BaseURL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://discourse.gohugo.io/t/how-to-handle-urls-when-in-a-subfolder/42260/4?u=jmooring">How to handle URLs when in a subfolder?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/gohugoio/hugo/issues/10606">Clearly document how to compute URLs that are baseURL aware&amp;hellip;&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://discourse.gohugo.io/t/figure-shortcode-cannot-find-image-in-static-folder-in-site-com-subsite-baseurl/33357">Figure shortcode cannot find image in static folder in site.com/subsite baseURL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://discourse.gohugo.io/t/docsy-theme-not-rendering-using-github-pages/28109/2">Docsy theme not rendering using GitHub Pages&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
