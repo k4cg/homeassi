@@ -21,7 +21,8 @@ description: >
 tl;dr: im Root Verzeichnis gibt es den Ordner `static`. Auf die darin abgelegten Dateien kann mit `/filename.drawio` oder `/foldername/filename.png` verlinkt werden. Das wird dann unter <https://name.tld/> bereitgestellt (z.B. <https://name.tld/filename.drawio>). Siehe [Hugo Doku](https://gohugo.io/content-management/static-files/).
 
 Falls die `baseURL` in der `config.toml` aber noch einen "Unterordner" hat (z.B. <https://k4cg.github.io/homeassi>), funktioniert das nicht mehr. Die relativen Links im Markdown werden in der erzeugten Webseite statt zu <https://k4cg.github.io/homeassi/filename.drawio> zu <https://k4cg.github.io/filename.drawio> umgewandelt und sind kaputt.
-Moegliche Loesung: Verwendung von [Page Bundles](https://gohugo.io/content-management/page-bundles/) statt Dateien im Ordner `static` abzulegen.
+
+Loesung: Verwendung von [Page Bundles](https://gohugo.io/content-management/page-bundles/) statt Dateien im Ordner `static` abzulegen.
 
 Linksammlung zum Thema:
 
